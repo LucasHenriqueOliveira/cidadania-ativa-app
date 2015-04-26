@@ -1,0 +1,8 @@
+{
+  "name": "CidadaniaAtivaApp",
+  "private": "true",
+  "devDependencies": {
+    "ionic": "driftyco/ionic-bower#1.0.0-rc.4",
+    "angular-google-maps": "~2.0.19"
+  }
+}
