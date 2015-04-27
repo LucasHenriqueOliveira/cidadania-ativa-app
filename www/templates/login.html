@@ -1,25 +1,30 @@
-<ion-modal-view>
-  <ion-header-bar>
-    <h1 class="title">Login</h1>
-    <div class="buttons">
-      <button class="button button-clear" ng-click="closeLogin()">Close</button>
+<ion-view hide-nav-bar="true">
+    <ion-content has-header="false" class="login">
+    </ion-content>
+
+    <div class="logo-welcome"></div>
+    <div class="login-btns">
+        <div id="social-links">
+            <ul>
+                <li ng-click="fbLogin()">
+                        <span class="ifacebook">
+                            <img src="img/social-icons/facebook.png">
+                        </span>
+                    <a href="#" class="afacebook">login com facebook</a>
+                </li>
+                <li ng-click="gplusLogin()">
+                        <span class="igoogleplus">
+                            <img src="img/social-icons/googleplus.png">
+                        </span>
+                    <a href="#" class="agoogleplus">login com google+</a>
+                </li>
+                <li ng-click="twLogin()">
+                        <span class="itwitter">
+                            <img src="img/social-icons/twitter.png">
+                        </span>
+                    <a href="#" class="atwitter">login com twitter</a>
+                </li>
+            </ul>
+        </div>
     </div>
-  </ion-header-bar>
-  <ion-content>
-    <form ng-submit="doLogin()">
-      <div class="list">
-        <label class="item item-input">
-          <span class="input-label">Username</span>
-          <input type="text" ng-model="loginData.username">
-        </label>
-        <label class="item item-input">
-          <span class="input-label">Password</span>
-          <input type="password" ng-model="loginData.password">
-        </label>
-        <label class="item">
-          <button class="button button-block button-positive" type="submit">Log in</button>
-        </label>
-      </div>
-    </form>
-  </ion-content>
-</ion-modal-view>
+</ion-view>

@@ -20,27 +20,38 @@
     .config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
 
-      .state('app', {
-        url: "/app",
-        abstract: true,
-        templateUrl: "templates/menu.html",
-        controller: 'MenuCtrl',
-        controllerAs: 'menu'
-      })
+        .state('app', {
+            url: "/app",
+            abstract: true,
+            templateUrl: "templates/menu.html",
+            controller: 'MenuCtrl',
+            controllerAs: 'menu'
+        })
 
-      .state('app.main', {
-        url: "/main",
-        views: {
-            'menuContent': {
-            templateUrl: "templates/main.html",
-                controller: 'MainCtrl',
-                controllerAs: 'main'
+        .state('app.login', {
+            url: "/login",
+            views: {
+                'menuContent': {
+                templateUrl: "templates/login.html",
+                    controller: 'LoginCtrl',
+                    controllerAs: 'login'
+                }
             }
-          }
-      });
+        })
 
-      // if none of the above states are matched, use this as the fallback
-      $urlRouterProvider.otherwise('/app/main');
+        .state('app.main', {
+            url: "/main",
+            views: {
+                'menuContent': {
+                    templateUrl: "templates/main.html",
+                    controller: 'MainCtrl',
+                    controllerAs: 'main'
+                }
+            }
+        });
+
+        // if none of the above states are matched, use this as the fallback
+        $urlRouterProvider.otherwise('/app/login');
     });
 
 })();
