@@ -63,7 +63,7 @@ map {
 }
 
 .login{
-    background: url("../../img/fundo.jpg") no-repeat center center fixed;
+    background: url(../img/fundo.jpg) no-repeat center center fixed;
     -webkit-filter: grayscale(90%) blur(2px);
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -87,6 +87,20 @@ map {
     background-size: cover;
 }
 
+.logo-text{
+    position: absolute;
+    overflow: hidden;
+    top:50%;
+    left:50%;
+    margin-top:-115px;
+    margin-left:-100px;
+    color: #fff;
+    font-size: 28px;
+    font-weight: 700;
+    height: 30px;
+    text-shadow: 2px 2px gray;
+}
+
 .login-btns {
     position: absolute;
     width: 250px;
@@ -94,7 +108,7 @@ map {
     overflow: hidden;
     top:50%;
     left:50%;
-    margin-top:0px;
+    margin-top:35px;
     margin-left:-120px;
 }
 
@@ -104,10 +118,9 @@ map {
 
 #social-links ul li {
     width: 250px;
-    font-family: 'Oswald', sans-serif;
     font-size: 14px;
     text-transform: uppercase;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 #social-links ul li span.ifacebook,
 #social-links ul li span.itwitter,
@@ -125,7 +138,7 @@ map {
     display: inline-table;
     color: #ffffff;
     text-decoration: none;
-    margin: 0;
+    margin: 0 0 0 -5px;
     width: 200px;
     text-align: center;
 }
