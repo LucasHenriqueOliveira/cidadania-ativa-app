@@ -1,4 +1,4 @@
-<ion-view view-title="Cidadania Ativa">
+<ion-view view-title="Cidadania Ativa" hide-back-button="true">
   <ion-content class="has-header">
     <ui-gmap-google-map draggable="true" center="map.center" zoom="map.zoom" options="map.options">
       <ui-gmap-marker coords="marker.coords" options="marker.options" idkey="marker.id" icon="marker.icon">
@@ -7,7 +7,7 @@
   </ion-content>
 
   <div class="fixed-outside">
-    <button class="button button-large button-assertive icon-left ion-speakerphone padding" id="denunciar">Denunciar</button>
+    <button class="button button-large button-assertive icon-left ion-speakerphone padding" id="denunciar" ng-click="setDenuncia()">Denunciar</button>
   </div>
 
   <div class="my-location">

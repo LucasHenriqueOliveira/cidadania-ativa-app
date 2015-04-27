@@ -32,7 +32,7 @@
             url: "/login",
             views: {
                 'menuContent': {
-                templateUrl: "templates/login.html",
+                    templateUrl: "templates/login.html",
                     controller: 'LoginCtrl',
                     controllerAs: 'login'
                 }
@@ -48,10 +48,21 @@
                     controllerAs: 'main'
                 }
             }
+        })
+
+        .state('app.denuncia', {
+            url: "/denuncia",
+            views: {
+                'menuContent': {
+                    templateUrl: "templates/denuncia.html",
+                    controller: 'DenunciaCtrl',
+                    controllerAs: 'denuncia'
+                }
+            }
         });
 
         // if none of the above states are matched, use this as the fallback
-        $urlRouterProvider.otherwise('/app/login');
+        $urlRouterProvider.otherwise('app/login');
     });
 
 })();
