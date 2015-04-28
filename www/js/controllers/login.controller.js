@@ -19,14 +19,17 @@
             }
 
             function fbLogin() {
+                event.preventDefault();
                 $state.go('app.main');
             };
 
             function gplusLogin() {
+                event.preventDefault();
                 $state.go('app.main');
             };
 
             function twLogin(){
+                event.preventDefault();
                 $state.go('app.main');
             };
         });

@@ -24,8 +24,7 @@
             url: "/app",
             abstract: true,
             templateUrl: "templates/menu.html",
-            controller: 'MenuCtrl',
-            controllerAs: 'menu'
+            controller: 'MenuCtrl'
         })
 
         .state('app.login', {
@@ -33,8 +32,7 @@
             views: {
                 'menuContent': {
                     templateUrl: "templates/login.html",
-                    controller: 'LoginCtrl',
-                    controllerAs: 'login'
+                    controller: 'LoginCtrl'
                 }
             }
         })
@@ -44,8 +42,7 @@
             views: {
                 'menuContent': {
                     templateUrl: "templates/main.html",
-                    controller: 'MainCtrl',
-                    controllerAs: 'main'
+                    controller: 'MainCtrl'
                 }
             }
         })
@@ -55,8 +52,7 @@
             views: {
                 'menuContent': {
                     templateUrl: "templates/denuncia.html",
-                    controller: 'DenunciaCtrl',
-                    controllerAs: 'denuncia'
+                    controller: 'DenunciaCtrl'
                 }
             }
         });
