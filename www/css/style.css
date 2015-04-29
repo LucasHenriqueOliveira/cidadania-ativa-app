@@ -54,12 +54,12 @@ map {
     font-weight: bold;
 }
 
-.my-location{
-    position: absolute;
-    bottom: 100px;
-    right: 5px;
-    color: #fff;
-    overflow: hidden;
+#button-location{
+    border: 0;
+    background-color: #fff;
+    margin-left: 0;
+    margin-right: 0;
+    padding-right: 0;
 }
 
 .login{

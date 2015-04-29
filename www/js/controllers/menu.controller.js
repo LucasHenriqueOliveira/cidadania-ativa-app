@@ -5,13 +5,9 @@
         .module('CidadaniaAtivaApp')
         .controller('MenuCtrl', MenuCtrl);
 
-    MenuCtrl.$inject = ['$scope', '$ionicSideMenuDelegate'];
+    MenuCtrl.$inject = ['$scope'];
 
-    function MenuCtrl($scope, $ionicSideMenuDelegate) {
-
-        $scope.toggleLeft = function() {
-            $ionicSideMenuDelegate.toggleLeft();
-        };
+    function MenuCtrl($scope) {
 
     };
 })();

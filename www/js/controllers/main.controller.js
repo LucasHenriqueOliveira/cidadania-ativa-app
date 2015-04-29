@@ -5,21 +5,33 @@
         .module('CidadaniaAtivaApp')
         .controller('MainCtrl', MainCtrl);
 
-        MainCtrl.$inject = ['$scope', '$ionicPlatform', '$cordovaGeolocation', '$state', '$ionicSideMenuDelegate'];
+        MainCtrl.$inject = ['$scope', '$ionicPlatform', '$cordovaGeolocation', '$state', '$ionicLoading'];
 
-        function MainCtrl($scope, $ionicPlatform, $cordovaGeolocation, $state, $ionicSideMenuDelegate) {
+        function MainCtrl($scope, $ionicPlatform, $cordovaGeolocation, $state, $ionicLoading) {
             $scope.myLocation = myLocation;
             $scope.setDenuncia = setDenuncia;
-            $scope.toggleLeftSideMenu = toggleLeftSideMenu;
 
             myLocation();
 
             function myLocation() {
+                $ionicLoading.show({template: '<i class="icon ion-loading-a"></i><br> Aguarde enquanto buscamos a sua localização...'});
+
                 $ionicPlatform.ready(function () {
                     var posOptions = {timeout: 10000, enableHighAccuracy: false, maximumAge: 65000};
                     $cordovaGeolocation
                         .getCurrentPosition(posOptions)
                         .then(function (position) {
+
+                            var geocoder = new google.maps.Geocoder();
+                            var latlng = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+
+                            geocoder.geocode({'latLng': latlng}, function(result, status) {
+                                if (status == google.maps.GeocoderStatus.OK) {
+                                    if(result[0]){
+                                        $scope.address = result[0].formatted_address;
+                                    }
+                                }
+                            });
 
                             $scope.map = {
                                 center: {
@@ -47,11 +59,8 @@
                                     longitude: position.coords.longitude
                                 },
                                 options: {draggable: true, animation: 1},
-                                showWindow: false,
-                                title: 'Panther Coffee, Wynwood',
-                                address: '2390 NW 2nd Ave Miami, FL 33127'
-                            }
-                            ;
+                                showWindow: false
+                            };
                         }, function (err) {
 
                             $scope.map = {
@@ -73,15 +82,13 @@
 
                         });
                 });
+
+                $ionicLoading.hide();
             }
 
             function setDenuncia() {
                 $state.go('app.denuncia');
             }
-
-            function toggleLeftSideMenu() {
-                $ionicSideMenuDelegate.toggleLeft();
-            };
         }
 
 })();
