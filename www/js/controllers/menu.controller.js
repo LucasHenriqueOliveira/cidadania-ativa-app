@@ -3,10 +3,15 @@
 
     angular
         .module('CidadaniaAtivaApp')
-        .controller('MenuCtrl', AppCtrl);
+        .controller('MenuCtrl', MenuCtrl);
 
-    function AppCtrl() {
-        var vm = this;
+    MenuCtrl.$inject = ['$scope', '$ionicSideMenuDelegate'];
+
+    function MenuCtrl($scope, $ionicSideMenuDelegate) {
+
+        $scope.toggleLeft = function() {
+            $ionicSideMenuDelegate.toggleLeft();
+        };
 
     };
 })();

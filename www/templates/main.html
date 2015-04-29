@@ -1,5 +1,5 @@
-<ion-view view-title="Cidadania Ativa" hide-back-button="true">
-  <ion-content class="has-header">
+<ion-view hide-nav-bar="true">
+  <ion-content>
     <ui-gmap-google-map draggable="true" center="map.center" zoom="map.zoom" options="map.options">
       <ui-gmap-marker coords="marker.coords" options="marker.options" idkey="marker.id" icon="marker.icon">
       </ui-gmap-marker>
@@ -11,6 +11,10 @@
   </div>
 
   <div class="my-location">
-    <button class="button icon ion-android-locate" ng-click="myLocation()"></button>
+    <button class="button icon ion-navigate" ng-click="myLocation()"></button>
+  </div>
+
+  <div class="icon-menu">
+    <button class="button icon ion-navicon-round" ng-click="toggleLeftSideMenu()"></button>
   </div>
 </ion-view>

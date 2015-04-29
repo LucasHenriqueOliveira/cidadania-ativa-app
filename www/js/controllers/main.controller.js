@@ -5,11 +5,12 @@
         .module('CidadaniaAtivaApp')
         .controller('MainCtrl', MainCtrl);
 
-        MainCtrl.$inject = ['$scope', '$ionicPlatform', '$cordovaGeolocation', '$state'];
+        MainCtrl.$inject = ['$scope', '$ionicPlatform', '$cordovaGeolocation', '$state', '$ionicSideMenuDelegate'];
 
-        function MainCtrl($scope, $ionicPlatform, $cordovaGeolocation, $state) {
+        function MainCtrl($scope, $ionicPlatform, $cordovaGeolocation, $state, $ionicSideMenuDelegate) {
             $scope.myLocation = myLocation;
             $scope.setDenuncia = setDenuncia;
+            $scope.toggleLeftSideMenu = toggleLeftSideMenu;
 
             myLocation();
 
@@ -77,6 +78,10 @@
             function setDenuncia() {
                 $state.go('app.denuncia');
             }
+
+            function toggleLeftSideMenu() {
+                $ionicSideMenuDelegate.toggleLeft();
+            };
         }
 
 })();
