@@ -61,6 +61,7 @@
                                 options: {draggable: true, animation: 1},
                                 showWindow: false
                             };
+
                         }, function (err) {
 
                             $scope.map = {
