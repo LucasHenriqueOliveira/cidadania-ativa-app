@@ -1,5 +1,31 @@
 <ion-view view-title="Inserir Denúncia" hide-back-button="true">
     <ion-content class="has-header">
-        DENUNCIA
+        <form ng-submit="createDenuncia(task)">
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Tipo de ocorrência
+                </div>
+                <select>
+                    <option>Blue</option>
+                    <option selected>Green</option>
+                    <option>Red</option>
+                </select>
+            </label>
+            <label class="item item-input item-floating-label">
+                <span class="input-label">Descrição</span>
+                <textarea placeholder="Descrição" rows="10"></textarea>
+            </label>
+            <div class="item-input-inset">
+                <div class="item-input-inset thumbnail-denuncia">
+                    <img src="../img/no_image.png" />
+                </div>
+                <button class="button button-block ion-camera" ng-click="addImage()">
+                    Tirar uma foto
+                </button>
+            </div>
+            <div class="item-input-inset">
+                <button type="submit" class="button button-large button-assertive padding" id="denunciar">Enviar denúncia</button>
+            </div>
+        </form>
     </ion-content>
 </ion-view>

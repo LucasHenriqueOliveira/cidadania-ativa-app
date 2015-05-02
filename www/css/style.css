@@ -112,6 +112,11 @@ map {
     margin-left:-120px;
 }
 
+.thumbnail-denuncia{
+    padding-left: 0;
+    padding-top: 0;
+}
+
 #social-links {
     text-align: center;
 }

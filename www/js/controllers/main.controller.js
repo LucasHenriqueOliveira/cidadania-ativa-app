@@ -14,16 +14,13 @@
             myLocation();
 
             function myLocation() {
-                $ionicLoading.show({template: '<i class="icon ion-loading-a"></i><br> Aguarde enquanto buscamos a sua localização...'});
+                $ionicLoading.show({template: 'Loading...'});
 
                 $ionicPlatform.ready(function () {
                     var posOptions = {timeout: 10000, enableHighAccuracy: false, maximumAge: 65000};
                     $cordovaGeolocation
                         .getCurrentPosition(posOptions)
                         .then(function (position) {
-
-                            var lat = position.coords.latitude;
-                            var lng = position.coords.longitude;
 
                             markerMyLocation(position.coords.latitude, position.coords.longitude);
 
@@ -72,7 +69,6 @@
                             if (status == google.maps.GeocoderStatus.OK) {
                                 if(result[0]){
                                     $scope.address = result[0].formatted_address;
-                                    console.log($scope.address);
                                 }
                             }
                         });
