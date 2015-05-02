@@ -5,18 +5,26 @@
         .module('CidadaniaAtivaApp')
         .controller('MainCtrl', MainCtrl);
 
-        MainCtrl.$inject = ['$scope', '$ionicPlatform', '$cordovaGeolocation', '$state', '$ionicLoading'];
+        MainCtrl.$inject = ['$scope', '$ionicPlatform', '$cordovaGeolocation', '$state', '$ionicLoading', '$timeout'];
 
-        function MainCtrl($scope, $ionicPlatform, $cordovaGeolocation, $state, $ionicLoading) {
+        function MainCtrl($scope, $ionicPlatform, $cordovaGeolocation, $state, $ionicLoading, $timeout) {
             $scope.myLocation = myLocation;
             $scope.setDenuncia = setDenuncia;
 
             myLocation();
 
             function myLocation() {
-                $ionicLoading.show({template: 'Loading...'});
 
                 $ionicPlatform.ready(function () {
+
+                    $ionicLoading.show({
+                        content: 'Loading',
+                        animation: 'fade-in',
+                        showBackdrop: false,
+                        maxWidth: 200,
+                        showDelay: 0
+                    });
+
                     var posOptions = {timeout: 10000, enableHighAccuracy: false, maximumAge: 65000};
                     $cordovaGeolocation
                         .getCurrentPosition(posOptions)
@@ -102,9 +110,8 @@
                             showWindow: false
                         };
                     }
+                    $ionicLoading.hide();
                 });
-
-                $ionicLoading.hide();
             }
 
             function setDenuncia() {
