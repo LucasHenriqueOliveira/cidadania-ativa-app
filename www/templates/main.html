@@ -1,21 +1,23 @@
 <ion-view view-title="Cidadania Ativa" hide-back-button="true">
-    <ion-content class="has-header">
-        <div class="bar bar-header item-input-inset">
-            <label class="item-input-wrapper">
-                <i class="icon ion-search placeholder-icon"></i>
-                <input type="search" placeholder="Pesquisar o local" ng-model="address" id="input-address" autocomplete="off">
-            </label>
+    <form ng-submit="setDenuncia()">
+        <ion-content class="has-header">
+            <div class="bar bar-header item-input-inset">
+                <label class="item-input-wrapper">
+                    <i class="icon ion-search placeholder-icon"></i>
+                    <input type="search" placeholder="Pesquisar o local" ng-model="address" id="input-address" autocomplete="off">
+                </label>
 
-            <button class="button button-small" id="button-location" ng-click="myLocation()"><i class="icon ion-navigate"></i></button>
+                <button class="button button-small" id="button-location" ng-click="myLocation()"><i class="icon ion-navigate"></i></button>
+            </div>
+            <ui-gmap-google-map draggable="true" id="map" center="map.center" zoom="map.zoom" options="map.options">
+              <ui-gmap-marker coords="marker.coords" options="marker.options" idkey="marker.id" icon="marker.icon">
+              </ui-gmap-marker>
+            </ui-gmap-google-map>
+        </ion-content>
+
+        <div class="fixed-outside">
+            <button type="submit" class="button button-large icon-left ion-speakerphone padding" id="denunciar">Denunciar</button>
         </div>
-        <ui-gmap-google-map draggable="true" id="map" center="map.center" zoom="map.zoom" options="map.options">
-          <ui-gmap-marker coords="marker.coords" options="marker.options" idkey="marker.id" icon="marker.icon">
-          </ui-gmap-marker>
-        </ui-gmap-google-map>
-    </ion-content>
-
-    <div class="fixed-outside">
-        <button class="button button-large button-assertive icon-left ion-speakerphone padding" id="denunciar" ng-click="setDenuncia()">Denunciar</button>
-    </div>
+    </form>
 
 </ion-view>

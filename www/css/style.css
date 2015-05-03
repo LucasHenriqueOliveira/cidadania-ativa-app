@@ -52,6 +52,8 @@ map {
 #denunciar{
     width: 100%;
     font-weight: bold;
+    background-color: #009966;
+    color: #ffffff;
 }
 
 #button-location{
