@@ -18,7 +18,7 @@
                 $ionicPlatform.ready(function () {
 
                     $ionicLoading.show({
-                        content: 'Loading',
+                        template: '<ion-spinner icon="ripple"></ion-spinner>',
                         animation: 'fade-in',
                         showBackdrop: false,
                         maxWidth: 200,
