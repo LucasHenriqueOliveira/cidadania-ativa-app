@@ -5,9 +5,9 @@
         .module('CidadaniaAtivaApp')
         .controller('MainCtrl', MainCtrl);
 
-        MainCtrl.$inject = ['$scope', '$ionicPlatform', '$cordovaGeolocation', '$state', '$ionicLoading', '$timeout'];
+        MainCtrl.$inject = ['$scope', '$ionicPlatform', '$cordovaGeolocation', '$state', '$ionicLoading', '$timeout', '$localstorage'];
 
-        function MainCtrl($scope, $ionicPlatform, $cordovaGeolocation, $state, $ionicLoading, $timeout) {
+        function MainCtrl($scope, $ionicPlatform, $cordovaGeolocation, $state, $ionicLoading, $timeout, $localstorage) {
             $scope.myLocation = myLocation;
             $scope.setDenuncia = setDenuncia;
 
@@ -115,6 +115,8 @@
             }
 
             function setDenuncia() {
+                $localstorage.set('address', $scope.address);
+                console.log($scope.address);
                 $state.go('app.denuncia');
             }
         }

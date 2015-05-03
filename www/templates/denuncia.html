@@ -1,10 +1,18 @@
 <ion-view view-title="Inserir Denúncia" hide-back-button="true">
     <ion-content class="has-header">
         <form ng-submit="createDenuncia(task)">
+            <div class="card">
+                <div class="item item-divider">
+                    Local da ocorrência
+                </div>
+                <div class="item item-text-wrap">
+                    {{address}}
+                </div>
+            </div>
             <div class="list list-inset">
                 <label class="item item-input item-select">
                     <div class="input-label">
-                        Ocorrência
+                        Tipo
                     </div>
                     <select>
                         <option>Blue</option>
@@ -13,8 +21,8 @@
                     </select>
                 </label>
                 <label class="item item-input item-floating-label">
-                    <span class="input-label">Descrição</span>
-                    <textarea placeholder="Descrição" rows="10"></textarea>
+                    <span class="input-label">Observação</span>
+                    <textarea placeholder="Observação" rows="10"></textarea>
                 </label>
                 <div class="item-input-inset">
                     <div class="item-input-inset thumbnail-denuncia">
