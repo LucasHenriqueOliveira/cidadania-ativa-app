@@ -5,9 +5,9 @@
         .module('CidadaniaAtivaApp')
         .controller('LoginCtrl', LoginCtrl);
 
-    LoginCtrl.$inject = ['$ionicPlatform', '$scope', '$state'];
+    LoginCtrl.$inject = ['$ionicPlatform', '$scope', '$state', '$cordovaOauth', '$localstorage'];
 
-    function LoginCtrl($ionicPlatform, $scope, $state) {
+    function LoginCtrl($ionicPlatform, $scope, $state, $cordovaOauth, $localstorage) {
         $ionicPlatform.ready(function () {
 
             $scope.fbLogin = fbLogin;
@@ -21,13 +21,15 @@
             function fbLogin() {
 
                 $cordovaOauth.facebook("967556483257669", ["email"]).then(function(result) {
-                    // results
+                    console.log("Response Object -> " + JSON.stringify(result));
+                    $localstorage.set('accessToken', result.access_token);
                 }, function(error) {
-                    // error
+                    console.log(error);
+                    //event.preventDefault();
+                    //$state.go('app.main');
                 });
 
-                event.preventDefault();
-                $state.go('app.main');
+
             };
 
             function gplusLogin() {
@@ -35,11 +37,10 @@
                 $cordovaOauth.google("277046291573-uvsja7nvgnop8fccfn4qcde8o194im7f.apps.googleusercontent.com", ["email"]).then(function(result) {
                     console.log("Response Object -> " + JSON.stringify(result));
                 }, function(error) {
-                    console.log("Error -> " + error);
+                    console.log(error);
+                    //event.preventDefault();
+                    //$state.go('app.main');
                 });
-
-                event.preventDefault();
-                $state.go('app.main');
             };
 
             function twLogin(){
