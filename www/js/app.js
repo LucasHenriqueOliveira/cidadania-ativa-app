@@ -3,38 +3,47 @@
 
     angular.module('CidadaniaAtivaApp', ['ionic', 'uiGmapgoogle-maps', 'ngCordova'])
 
-    .run(function($ionicPlatform) {
-      $ionicPlatform.ready(function() {
-        // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-        // for form inputs)
-        if (window.cordova && window.cordova.plugins.Keyboard) {
-          cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-        }
-        if (window.StatusBar) {
-          // org.apache.cordova.statusbar required
-          StatusBar.styleDefault();
-        }
-      });
+    .run(function($rootScope, $ionicPlatform, $ionicLoading) {
+
+        $ionicPlatform.ready(function() {
+            if (window.cordova && window.cordova.plugins.Keyboard) {
+                cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+            }
+            if (window.StatusBar) {
+                StatusBar.styleDefault();
+            }
+        });
+
+        $rootScope.$on('loading:show', function() {
+            $ionicLoading.show(
+                {
+                    content: '',
+                    animation: 'fade-in',
+                    showBackdrop: true,
+                    maxWidth: 300,
+                    showDelay: 10
+                }
+            );
+        });
+
+        $rootScope.$on('loading:hide', function() {
+            $ionicLoading.hide();
+        });
     })
 
     .config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
 
-        .state('app', {
-            url: "/app",
-            abstract: true,
-            templateUrl: "templates/menu.html",
-            controller: 'MenuCtrl'
+        .state('login', {
+            url: "/login",
+            templateUrl: "templates/login.html",
+            controller: 'LoginCtrl'
         })
 
-        .state('app.login', {
-            url: "/login",
-            views: {
-                'menuContent': {
-                    templateUrl: "templates/login.html",
-                    controller: 'LoginCtrl'
-                }
-            }
+        .state('app', {
+            url: "/app",
+            templateUrl: "templates/menu.html",
+            controller: 'AppCtrl'
         })
 
         .state('app.main', {
@@ -58,7 +67,7 @@
         });
 
         // if none of the above states are matched, use this as the fallback
-        $urlRouterProvider.otherwise('app/login');
+        $urlRouterProvider.otherwise('/app');
     });
 
 })();
