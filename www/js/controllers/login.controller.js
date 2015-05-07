@@ -5,23 +5,32 @@
         .module('CidadaniaAtivaApp')
         .controller('LoginCtrl', LoginCtrl);
 
-    LoginCtrl.$inject = ['$ionicPlatform', '$scope', '$state', '$cordovaOauth', '$localstorage', 'AuthService'];
+    LoginCtrl.$inject = ['$ionicPlatform', '$scope', '$location', '$cordovaOauth', '$localstorage', 'AuthService'];
 
-    function LoginCtrl($ionicPlatform, $scope, $state, $cordovaOauth, $localstorage, AuthService) {
+    function LoginCtrl($ionicPlatform, $scope, $location, $cordovaOauth, $localstorage, AuthService) {
 
         $scope.user = {};
 
         if(AuthService.isLogged()) {
-            $ionicHistory.nextViewOptions({
-                disableBack: true
-            });
-            $location.path('/app/events');
+            event.preventDefault();
+            $location.go('app.main');
         }
 
         $scope.loginFacebook = function() {
             AuthService.loginFacebook();
         };
 
+
+        $scope.loginGoogle = function() {
+            event.preventDefault();
+            $location.go('app.main');
+        };
+
+
+        $scope.loginTwitter = function() {
+            event.preventDefault();
+            $location.go('app.main');
+        };
 
 
 
