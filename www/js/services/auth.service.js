@@ -11,7 +11,7 @@
         return {
             loginFacebook: function() {
                 /*
-                 * Primeiro conecta-se ao facebook e se obtem o token de authenticacao
+                 * Primeiro conecta-se ao facebook e se obtem o token de autenticacao
                  */
                 $cordovaOauth.facebook("967556483257669", ["email"]).then(function(result) {
 
@@ -39,9 +39,24 @@
 
             loginGoogle: function() {
                 /*
-                 * Primeiro conecta-se ao google e se obtem o token de authenticacao
+                 * Primeiro conecta-se ao google e se obtem o token de autenticacao
                  */
                 $cordovaOauth.google("277046291573-uvsja7nvgnop8fccfn4qcde8o194im7f.apps.googleusercontent.com", ["email"]).then(function(result) {
+
+                    $localstorage.set('authToken', result.access_token);
+
+                }, function(error) {
+                    alert("There was a problem signing in!  See the console for logs");
+                    console.log(error);
+                    $location.path('/login');
+                });
+            },
+
+            loginTwitter: function() {
+                /*
+                 * Primeiro conecta-se ao twitter e se obtem o token de autenticacao
+                 */
+                $cordovaOauth.twitter("NPdS21200O14f3K3VS3Zw6CFP", "kAKBzcKw2T8Ekr7l8F1O1PWpUlOO6EuvK1ZlbKrzXSpByWFgv").then(function(result) {
 
                     $localstorage.set('authToken', result.access_token);
 

@@ -27,10 +27,8 @@
 
 
         $scope.loginTwitter = function() {
-            event.preventDefault();
-            $location.path('/app/main');
+            AuthService.loginTwitter();
         };
-
 
 
         //$ionicPlatform.ready(function () {
