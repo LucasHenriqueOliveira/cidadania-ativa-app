@@ -21,6 +21,7 @@
                         $localstorage.set('userId', result.data.id);
                         $localstorage.set('userName', result.data.name);
                         $localstorage.set('userEmail', result.data.email);
+                        $localstorage.set('userPicture', result.data.picture);
 
                         $location.path('/app/main');
 
@@ -41,9 +42,23 @@
                 /*
                  * Primeiro conecta-se ao google e se obtem o token de autenticacao
                  */
-                $cordovaOauth.google("277046291573-uvsja7nvgnop8fccfn4qcde8o194im7f.apps.googleusercontent.com", ["email"]).then(function(result) {
+                $cordovaOauth.google("277046291573-uvsja7nvgnop8fccfn4qcde8o194im7f.apps.googleusercontent.com", ["https://www.googleapis.com/auth/plus.login","https://www.googleapis.com/auth/userinfo.email"]).then(function(result) {
 
-                    $localstorage.set('authToken', result.access_token);
+                    $http.get("https://www.googleapis.com/oauth2/v1/userinfo?alt=json", { params: { access_token: result.access_token }}).then(function(result) {
+
+                        $localstorage.set('authToken', result.access_token);
+                        $localstorage.set('userId', result.data.id);
+                        $localstorage.set('userName', result.data.name);
+                        $localstorage.set('userEmail', result.data.email);
+                        $localstorage.set('userPicture', result.data.picture);
+
+                        $location.path('/app/main');
+
+                    }, function(error) {
+                        alert("There was a problem getting your profile.  Check the logs for details.");
+                        console.log(error);
+                        $location.path('/login');
+                    });
 
                 }, function(error) {
                     alert("There was a problem signing in!  See the console for logs");
@@ -59,6 +74,7 @@
                 $cordovaOauth.twitter("NPdS21200O14f3K3VS3Zw6CFP", "kAKBzcKw2T8Ekr7l8F1O1PWpUlOO6EuvK1ZlbKrzXSpByWFgv").then(function(result) {
 
                     $localstorage.set('authToken', result.access_token);
+                    $location.path('/app/main');
 
                 }, function(error) {
                     alert("There was a problem signing in!  See the console for logs");
