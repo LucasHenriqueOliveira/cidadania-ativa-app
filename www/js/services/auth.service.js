@@ -37,6 +37,21 @@
                 });
             },
 
+            loginGoogle: function() {
+                /*
+                 * Primeiro conecta-se ao google e se obtem o token de authenticacao
+                 */
+                $cordovaOauth.google("277046291573-uvsja7nvgnop8fccfn4qcde8o194im7f.apps.googleusercontent.com", ["email"]).then(function(result) {
+
+                    $localstorage.set('authToken', result.access_token);
+
+                }, function(error) {
+                    alert("There was a problem signing in!  See the console for logs");
+                    console.log(error);
+                    $location.path('/login');
+                });
+            },
+
             isLogged: function() {
                 return ($localstorage.userId && $localstorage.authToken);
             },

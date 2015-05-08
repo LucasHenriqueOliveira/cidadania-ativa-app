@@ -9,11 +9,11 @@
 
     function AppCtrl($location, AuthService) {
 
-        if(AuthService.isLogged()) {
-            $location.path('/app/main');
-        } else {
-            $location.path('/login');
-        }
+        //if(AuthService.isLogged()) {
+        //    $location.path('/app/main');
+        //} else {
+        //    $location.path('/login');
+        //}
 
     };
 })();

@@ -13,7 +13,7 @@
 
         if(AuthService.isLogged()) {
             event.preventDefault();
-            $location.go('app.main');
+            $location.path('/app/main');
         }
 
         $scope.loginFacebook = function() {
@@ -22,14 +22,13 @@
 
 
         $scope.loginGoogle = function() {
-            event.preventDefault();
-            $location.go('app.main');
+            AuthService.loginGoogle();
         };
 
 
         $scope.loginTwitter = function() {
             event.preventDefault();
-            $location.go('app.main');
+            $location.path('/app/main');
         };
 
 
