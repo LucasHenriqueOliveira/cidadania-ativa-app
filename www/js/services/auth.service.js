@@ -5,9 +5,9 @@
         .module('CidadaniaAtivaApp')
         .factory('AuthService', AuthService);
 
-    AuthService.$inject = ['$localstorage', '$cordovaOauth', '$location', '$http'];
+    AuthService.$inject = ['$localstorage', '$cordovaOauth', '$location', '$http', '$cordovaOauthUtility'];
 
-    function AuthService($localstorage, $cordovaOauth, $location, $http) {
+    function AuthService($localstorage, $cordovaOauth, $location, $http, $cordovaOauthUtility) {
         return {
             loginFacebook: function() {
                 /*
@@ -73,57 +73,48 @@
                  */
                 $cordovaOauth.twitter("NPdS21200O14f3K3VS3Zw6CFP", "kAKBzcKw2T8Ekr7l8F1O1PWpUlOO6EuvK1ZlbKrzXSpByWFgvq").then(function(result) {
 
-                    function randomString(length, chars) {
-                        var result = '';
-                        for (var i = length; i > 0; --i) result += chars[Math.round(Math.random() * (chars.length - 1))];
-                        return result;
-                    }
+                    $localstorage.set('authToken', result.oauth_token);
+                    $localstorage.set('authTokenSecret', result.oauth_token_secret);
 
-                    var nonce = randomString(32,'0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
-                    var unixtime = Math.round((new Date()).getTime() / 1000.0);
-                    var httpMethod = 'GET';
+                    var oauthObject = {
+                        oauth_consumer_key: 'NPdS21200O14f3K3VS3Zw6CFP',
+                        oauth_nonce: $cordovaOauthUtility.createNonce(10),
+                        oauth_signature_method: "HMAC-SHA1",
+                        oauth_token: result.oauth_token,
+                        oauth_timestamp: Math.round((new Date()).getTime() / 1000.0),
+                        oauth_version: "1.0"
+                    };
+                    var method = 'GET';
                     var url = 'https://api.twitter.com/1.1/account/verify_credentials.json';
-                    var consumerSecret = 'kAKBzcKw2T8Ekr7l8F1O1PWpUlOO6EuvK1ZlbKrzXSpByWFgvq';
-                    var tokenSecret = result.oauth_token_secret;
-                    var parameters = {
-                            oauth_consumer_key : 'NPdS21200O14f3K3VS3Zw6CFP',
-                            oauth_nonce : nonce,
-                            oauth_signature_method : 'HMAC-SHA1',
-                            oauth_timestamp : unixtime,
-                            oauth_token : result.oauth_token,
-                            oauth_version : '1.0'
-                        };
+                    var signatureObj = $cordovaOauthUtility.createSignature(method, url, oauthObject, {}, "kAKBzcKw2T8Ekr7l8F1O1PWpUlOO6EuvK1ZlbKrzXSpByWFgvq", result.oauth_token_secret);
+                    $http.defaults.headers.common.Authorization = signatureObj.authorization_header;
 
-                    var parameter_string = "";
-                    for (var key in parameters) {
-                        parameter_string += encodeURIComponent(key) + "=" + encodeURIComponent(parameters[key]);
-                        if(key != "oauth_version") {
-                            parameter_string += "&";
-                        }
-                    }
+                    $http.get("https://api.twitter.com/1.1/account/verify_credentials.json").then(function(result) {
 
-                    var signature_base_string = httpMethod + "&" + encodeURIComponent('https://api.twitter.com/1.1/account/verify_credentials.json') + "&" +
-                        encodeURIComponent("oauth_callback=http://127.0.0.1/callback&") +
-                        encodeURIComponent(parameter_string);
+                        $localstorage.set('userId', result.data.id);
+                        $localstorage.set('userName', result.data.name);
+                        $localstorage.set('userPicture', result.data.profile_image_url);
 
-                    var signing_key = encodeURIComponent("kAKBzcKw2T8Ekr7l8F1O1PWpUlOO6EuvK1ZlbKrzXSpByWFgvq") + "&";
+                        $location.path('/app/main');
 
-                    var shaObj = new jsSHA(signature_base_string, "TEXT");
-                    var signature = shaObj.getHMAC(signing_key, "TEXT", "SHA-1", "B64");
-
-                    $http.get("https://api.twitter.com/1.1/account/verify_credentials.json", {
-                        headers: {
-                            'Authorization':
-                            'Oauth oauth_consumer_key = "NPdS21200O14f3K3VS3Zw6CFP",' +
-                            'oauth_signature_method="HMAC-SHA1",' +
-                            'oauth_timestamp="'+ unixtime +'",' +
-                            'oauth_nonce="'+ nonce +'",' +
-                            'oauth_version="1.0",' +
-                            'oauth_token="'+ result.oauth_token +'",' +
-                            'oauth_signature="'+ signature +'"'
-                        }}).then(function(result) {
-
-                        alert(JSON.stringify(result));
+                    }, function(error) {
+                        alert("There was a problem getting your profile.  Check the logs for details.");
+                        console.log(error);
+                        $location.path('/login');
+                    });
+                    //$http.get("https://api.twitter.com/1.1/account/verify_credentials.json", {
+                    //    headers: {
+                    //        'Authorization':
+                    //        'Oauth oauth_consumer_key = "NPdS21200O14f3K3VS3Zw6CFP",' +
+                    //        'oauth_signature_method="HMAC-SHA1",' +
+                    //        'oauth_timestamp="'+ unixtime +'",' +
+                    //        'oauth_nonce="'+ nonce +'",' +
+                    //        'oauth_version="1.0",' +
+                    //        'oauth_token="'+ result.oauth_token +'",' +
+                    //        'oauth_signature="'+ signature +'"'
+                    //    }}).then(function(result) {
+                    //
+                    //    alert(JSON.stringify(result));
                         //$localstorage.set('authToken', result.access_token);
                     //    //$localstorage.set('userId', result.data.id);
                     //    //$localstorage.set('userName', result.data.name);
@@ -132,11 +123,11 @@
                     //    //
                     //    //$location.path('/app/main');
                     //
-                    }, function(error) {
-                        alert("There was a problem getting your profile.  Check the logs for details.");
-                        console.log(error);
-                        $location.path('/login');
-                    });
+                    //}, function(error) {
+                    //    alert("There was a problem getting your profile.  Check the logs for details.");
+                    //    console.log(error);
+                    //    $location.path('/login');
+                    //});
 
                 }, function(error) {
                     alert("There was a problem signing in!  See the console for logs");
