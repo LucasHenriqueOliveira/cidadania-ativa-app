@@ -21,7 +21,7 @@
                         $localstorage.set('userId', result.data.id);
                         $localstorage.set('userName', result.data.name);
                         $localstorage.set('userEmail', result.data.email);
-                        $localstorage.set('userPicture', result.data.picture);
+                        $localstorage.set('userPicture', result.data.picture.data.url);
 
                         $location.path('/app/main');
 
