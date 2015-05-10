@@ -13,10 +13,12 @@
   </ion-side-menu-content>
 
   <ion-side-menu side="left">
-    <ion-header-bar class="bar-stable">
-      <h1 class="title">Menu</h1>
-    </ion-header-bar>
     <ion-content>
+      <div class="item-avatar col-center">
+        <img ng-src="{{userPicture}}" />
+        <br />
+        <span class="name">{{userName}}</span>
+      </div>
       <ion-list>
         <ion-item nav-clear menu-close ng-click="login()">
           Login

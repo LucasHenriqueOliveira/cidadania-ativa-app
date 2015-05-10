@@ -5,9 +5,17 @@
         .module('CidadaniaAtivaApp')
         .controller('AppCtrl', AppCtrl);
 
-    AppCtrl.$inject = ['$location', 'AuthService'];
+    AppCtrl.$inject = ['$scope', '$location', 'AuthService', '$localstorage'];
 
-    function AppCtrl($location, AuthService) {
+    function AppCtrl($scope, $location, AuthService, $localstorage) {
+
+        $scope.userName = $localstorage.get('userName');
+        
+        if ($localstorage.get('userPicture') !== undefined) {
+            $scope.userPicture = $localstorage.get('userPicture');
+        } else{
+            $scope.userPicture = '../img/avatar.png';
+        }
 
         //if(AuthService.isLogged()) {
         //    $location.path('/app/main');

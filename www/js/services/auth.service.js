@@ -102,32 +102,6 @@
                         console.log(error);
                         $location.path('/login');
                     });
-                    //$http.get("https://api.twitter.com/1.1/account/verify_credentials.json", {
-                    //    headers: {
-                    //        'Authorization':
-                    //        'Oauth oauth_consumer_key = "NPdS21200O14f3K3VS3Zw6CFP",' +
-                    //        'oauth_signature_method="HMAC-SHA1",' +
-                    //        'oauth_timestamp="'+ unixtime +'",' +
-                    //        'oauth_nonce="'+ nonce +'",' +
-                    //        'oauth_version="1.0",' +
-                    //        'oauth_token="'+ result.oauth_token +'",' +
-                    //        'oauth_signature="'+ signature +'"'
-                    //    }}).then(function(result) {
-                    //
-                    //    alert(JSON.stringify(result));
-                        //$localstorage.set('authToken', result.access_token);
-                    //    //$localstorage.set('userId', result.data.id);
-                    //    //$localstorage.set('userName', result.data.name);
-                    //    //$localstorage.set('userEmail', result.data.email);
-                    //    //$localstorage.set('userPicture', result.data.picture);
-                    //    //
-                    //    //$location.path('/app/main');
-                    //
-                    //}, function(error) {
-                    //    alert("There was a problem getting your profile.  Check the logs for details.");
-                    //    console.log(error);
-                    //    $location.path('/login');
-                    //});
 
                 }, function(error) {
                     alert("There was a problem signing in!  See the console for logs");
