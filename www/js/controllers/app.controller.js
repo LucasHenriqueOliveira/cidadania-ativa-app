@@ -17,6 +17,8 @@
             $scope.userPicture = '../img/avatar.png';
         }
 
+        $scope.userIdentify = $localstorage.get('userEmail');
+
         //if(AuthService.isLogged()) {
         //    $location.path('/app/main');
         //} else {

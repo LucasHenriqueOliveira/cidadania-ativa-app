@@ -158,5 +158,10 @@ map {
 
 .name {
     position: absolute;
-    top: 4%;
+    top: 1%;
+}
+
+.identify {
+    color: gray;
+    margin-top: 0;
 }
