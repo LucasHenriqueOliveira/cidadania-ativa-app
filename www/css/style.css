@@ -165,3 +165,7 @@ map {
     color: gray;
     margin-top: 0;
 }
+
+.item-menu{
+    line-height: 35px;
+}
