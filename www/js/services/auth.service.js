@@ -20,7 +20,7 @@
                         $localstorage.set('authToken', result.access_token);
                         $localstorage.set('userId', result.data.id);
                         $localstorage.set('userName', result.data.name);
-                        $localstorage.set('userEmail', result.data.email);
+                        $localstorage.set('userIdentify', result.data.email);
                         $localstorage.set('userPicture', result.data.picture.data.url);
 
                         $location.path('/app/main');
@@ -49,7 +49,7 @@
                         $localstorage.set('authToken', result.access_token);
                         $localstorage.set('userId', result.data.id);
                         $localstorage.set('userName', result.data.name);
-                        $localstorage.set('userEmail', result.data.email);
+                        $localstorage.set('userIdentify', result.data.email);
                         $localstorage.set('userPicture', result.data.picture);
 
                         $location.path('/app/main');
@@ -93,6 +93,7 @@
 
                         $localstorage.set('userId', result.data.id);
                         $localstorage.set('userName', result.data.name);
+                        $localstorage.set('userIdentify', result.data.screen_name);
                         $localstorage.set('userPicture', result.data.profile_image_url);
 
                         $location.path('/app/main');

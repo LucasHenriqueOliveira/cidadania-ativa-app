@@ -10,6 +10,7 @@
     function AppCtrl($scope, $location, AuthService, $localstorage) {
 
         $scope.userName = $localstorage.get('userName');
+        $scope.userIdentify = $localstorage.get('userIdentify');
 
         if ($localstorage.get('userPicture') !== undefined) {
             $scope.userPicture = $localstorage.get('userPicture');
@@ -17,7 +18,6 @@
             $scope.userPicture = '../img/avatar.png';
         }
 
-        $scope.userIdentify = $localstorage.get('userEmail');
 
         //if(AuthService.isLogged()) {
         //    $location.path('/app/main');
