@@ -112,14 +112,34 @@
             },
 
             isLogged: function() {
-                return ($localstorage.userId && $localstorage.authToken);
+                return ($localstorage.get('userId') && $localstorage.get('userName') && $localstorage.get('userIdentify') && $localstorage.get('authToken'));
             },
 
             logout: function(callback) {
-                delete $localstorage.userId;
-                delete $localstorage.userName;
-                delete $localstorage.authToken;
-                delete $localstorage.userEmail;
+                delete $localstorage.get('userId');
+                delete $localstorage.get('userName');
+                delete $localstorage.get('authToken');
+                delete $localstorage.get('userIdentify');
+            },
+
+            getToken: function() {
+                return $localstorage.get('authToken');
+            },
+
+            getUserId: function() {
+                return $localstorage.get('userId');
+            },
+
+            getUserIdentify: function() {
+                return $localstorage.get('userIdentify');
+            },
+
+            getUserName: function() {
+                return $localstorage.get('userName');
+            },
+
+            getUserPicture: function() {
+                return $localstorage.get('userPicture');
             }
         }
     }
