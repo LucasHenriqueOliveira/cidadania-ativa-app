@@ -31,8 +31,36 @@
         });
     })
 
-    .config(function($stateProvider, $urlRouterProvider) {
-    $stateProvider
+    .config(function($stateProvider, $urlRouterProvider, $httpProvider) {
+        $httpProvider
+
+            .interceptors.push(function($q, $rootScope) {
+                return{
+                    request: function(config) {
+                        $rootScope.$broadcast('loading:show');
+                        return config;
+                    },
+                    response: function(response) {
+                        $rootScope.$broadcast('loading:hide');
+                        return response;
+                    },
+                    requestError: function(rejection) {
+                        if (rejection.code !== 404) {
+                            alert('Request error ' + rejection.data)
+                            console.log(rejection)
+                        }
+                        $rootScope.$broadcast('loading:hide');
+                        return $q.reject(rejection);
+                    },
+                    responseError: function(rejection) {
+                        $rootScope.$broadcast('loading:hide');
+                        return $q.reject(rejection);
+                    }
+                }
+
+            });
+
+        $stateProvider
 
         .state('login', {
             url: "/login",
