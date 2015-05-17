@@ -157,19 +157,33 @@ map {
 #social-links ul li a.agoogleplus:active { background: #ce3e26; }
 
 .name {
-    position: absolute;
-    top: 1%;
+    position: relative;
+    top: 100px;
 }
 
 .identify {
+    position: relative;
     color: gray;
-    margin-top: 0;
-}
-
-.top-menu{
-    margin-top: 20px;
+    top: 90px;
 }
 
 .item-menu{
     line-height: 35px;
+}
+
+.item-picture{
+    text-align: center;
+    min-height: 72px;
+    height: 160px;
+}
+
+.item-picture > img:first-child{
+    position: absolute;
+    top: 20px;
+    left: 35%;
+    max-width: 80px;
+    max-height: 80px;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
 }
