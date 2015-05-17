@@ -84,12 +84,12 @@
             }
         })
 
-        .state('app.denuncia', {
-            url: "/denuncia",
+        .state('app.ocorrencia', {
+            url: "/ocorrencia",
             views: {
                 'menuContent': {
-                    templateUrl: "templates/denuncia.html",
-                    controller: 'DenunciaCtrl'
+                    templateUrl: "templates/ocorrencia.html",
+                    controller: 'OcorrenciaCtrl'
                 }
             }
         });

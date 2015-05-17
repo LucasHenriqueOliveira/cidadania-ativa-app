@@ -9,7 +9,7 @@
 
         function MainCtrl($scope, $ionicPlatform, $cordovaGeolocation, $state, $timeout, $localstorage) {
             $scope.myLocation = myLocation;
-            $scope.setDenuncia = setDenuncia;
+            $scope.setOcorrencia = setOcorrencia;
 
             myLocation();
 
@@ -17,7 +17,7 @@
 
                 $ionicPlatform.ready(function () {
 
-                    var posOptions = {timeout: 10000, enableHighAccuracy: false, maximumAge: 65000};
+                    var posOptions = {timeout: 1000, enableHighAccuracy: false, maximumAge: 65000};
                     $cordovaGeolocation
                         .getCurrentPosition(posOptions)
                         .then(function (position) {
@@ -105,9 +105,9 @@
                 });
             }
 
-            function setDenuncia() {
+            function setOcorrencia() {
                 $localstorage.set('address', $scope.address);
-                $state.go('app.denuncia');
+                $state.go('app.ocorrencia');
             }
         }
 

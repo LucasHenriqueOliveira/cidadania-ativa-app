@@ -9,6 +9,7 @@
 
             <button class="button button-small" id="button-location" ng-click="myLocation()"><i class="icon ion-navigate"></i></button>
         </div>
+
         <ui-gmap-google-map draggable="true" id="map" center="map.center" zoom="map.zoom" options="map.options">
           <ui-gmap-marker coords="marker.coords" options="marker.options" idkey="marker.id" icon="marker.icon">
           </ui-gmap-marker>
@@ -16,7 +17,7 @@
     </ion-content>
 
     <div class="fixed-outside">
-        <button ng-click="setDenuncia()" class="button button-large icon-left ion-speakerphone padding" id="denunciar">Denunciar</button>
+        <button ng-click="setOcorrencia()" class="button button-large icon-left ion-speakerphone padding" id="ocorrencia">Ocorrência</button>
     </div>
 
 </ion-view>
