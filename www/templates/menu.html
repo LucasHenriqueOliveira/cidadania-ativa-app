@@ -13,23 +13,23 @@
   </ion-side-menu-content>
 
   <ion-side-menu side="left">
-    <ion-content>
+    <ion-content class="dark">
       <div class="item-picture">
         <img ng-src="{{userPicture}}" />
         <h4 class="name">{{userName}}</h4>
         <h6 class="identify">{{userIdentify}}</h6>
       </div>
       <ion-list>
-        <ion-item nav-clear class="item item-icon-left item-menu" menu-close href="#/app/main">
+        <ion-item nav-clear class="item item-icon-left item-menu dark" menu-close href="#/app/main">
           <i class="icon ion-speakerphone"></i> Ocorrência
         </ion-item>
-        <ion-item nav-clear class="item item-icon-left item-menu" menu-close href="#/app/personal">
+        <ion-item nav-clear class="item item-icon-left item-menu dark" menu-close href="#/app/personal">
           <i class="icon ion-clipboard"></i> Minhas ocorrências
         </ion-item>
-        <ion-item nav-clear class="item item-icon-left item-menu" menu-close href="#/app/config">
+        <ion-item nav-clear class="item item-icon-left item-menu dark" menu-close href="#/app/config">
           <i class="icon ion-gear-a"></i> Configurações
         </ion-item>
-        <ion-item nav-clear class="item item-icon-left item-menu" menu-close ng-click="logout()">
+        <ion-item nav-clear class="item item-icon-left item-menu dark" menu-close ng-click="logout()">
           <i class="icon ion-power"></i> Sair
         </ion-item>
       </ion-list>
