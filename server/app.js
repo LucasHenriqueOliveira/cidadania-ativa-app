@@ -1,6 +1,22 @@
 var express = require('express'),
     mongoose = require('mongoose'),
-    bodyParser = require('body-parser');
+    bodyParser = require('body-parser'),
+    mysql = require('mysql');
+
+var connection = mysql.createConnection({
+    host     : 'localhost',
+    user     : '',
+    password : '',
+    database : ''
+});
+
+connection.connect(function(err){
+    if(!err) {
+        console.log("Database is connected ... \n\n");
+    } else {
+        console.log("Error connecting database ... \n\n");
+    }
+});
 
 var Local = require('./models/localModel');
 
