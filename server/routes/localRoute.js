@@ -1,20 +1,37 @@
 var express = require('express'),
     mysql = require('mysql');
 
-var connection = mysql.createConnection({
-    host     : 'localhost',
-    user     : 'root',
+var pool = mysql.createPool({
+    connectionLimit : 100,
+    host : 'localhost',
+    user : 'root',
     password : '',
-    database : 'cidadaniaativa'
+    database : 'cidadaniaativa',
+    debug :  false
 });
 
-connection.connect(function(err){
-    if(!err) {
-        console.log("Database is connected ... \n\n");
-    } else {
-        console.log("Error connecting database ... \n\n");
-    }
-});
+function handle_database(req,res, sql) {
+
+    pool.getConnection(function(err,connection){
+        if (err) {
+            connection.release();
+            res.json({"code" : 100, "status" : "Error in connection database"});
+            return;
+        }
+
+        connection.query(sql,function(err,rows){
+            connection.release();
+            if(!err) {
+                res.json(rows);
+            }
+        });
+
+        connection.on('error', function(err) {
+            res.json({"code" : 100, "status" : "Error in connection database"});
+            return;
+        });
+    });
+}
 
 var routes = function(Local){
     var localRouter = express.Router();
@@ -26,13 +43,8 @@ var routes = function(Local){
         .get(LocalController.get);
 
     localRouter.use('/', function(req, res, next){
-        connection.query('SELECT * from ocorrencia', function(err, rows, fields) {
-            connection.end();
-            if (!err)
-                res.json(rows);
-            else
-                console.log('Error while performing Query.');
-        });
+        var sql = 'SELECT * from ocorrencia';
+        handle_database(req, res, sql);
     });
 
     return localRouter;
