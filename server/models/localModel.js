@@ -2,6 +2,9 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 var localModel = new Schema({
+    id: {
+        type: String
+    },
     local: {
         type: String
     },
