@@ -3,16 +3,16 @@ var mongoose = require('mongoose'),
 
 var localModel = new Schema({
     id: {
-        type: String
+        type: String, nullable: false, primary: true
     },
     local: {
-        type: String
+        type: String, maxlength: 254, nullable: false
     },
     latitude: {
-        type: String
+        type: String, maxlength: 20, nullable: false
     },
     longitude: {
-        type: String
+        type: String, maxlength: 20, nullable: false
     }
 });
 
