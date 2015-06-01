@@ -3,6 +3,7 @@ var express = require('express'),
     bodyParser = require('body-parser');
 
 var Local = require('./models/localModel');
+var User = require('./models/userModel');
 
 var app = express();
 
@@ -18,6 +19,9 @@ app.get('/', function(req, res){
 
 localRouter = require('./routes/localRoute')(Local);
 app.use('/api/local', localRouter);
+
+userRouter = require('./routes/userRoute')(User);
+app.use('/api/user', userRouter);
 
 
 app.listen(port, function(){
