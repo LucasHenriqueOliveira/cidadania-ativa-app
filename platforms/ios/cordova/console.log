@@ -1,0 +1,183 @@
+2015-05-15 17:14:13.613 CidadaniaAtivaApp[3420:135035] Apache Cordova native platform version 3.7.0 is starting.
+2015-05-15 17:14:13.613 CidadaniaAtivaApp[3420:135035] Multi-tasking -> Device: YES, App: YES
+2015-05-15 17:14:13.616 CidadaniaAtivaApp[3420:135035] Unlimited access to network resources
+2015-05-15 17:14:13.689 CidadaniaAtivaApp[3420:135035] [CDVTimer][keyboard] 0.051975ms
+2015-05-15 17:14:13.714 CidadaniaAtivaApp[3420:135035] [CDVTimer][statusbar] 25.031984ms
+2015-05-15 17:14:13.714 CidadaniaAtivaApp[3420:135035] [CDVTimer][TotalPluginStartup] 25.739014ms
+2015-05-15 17:14:13.786 CidadaniaAtivaApp[3420:135035] Resetting plugins due to page load.
+2015-05-15 17:14:14.403 CidadaniaAtivaApp[3420:135035] Finished load of: file:///Users/lucas/Library/Developer/CoreSimulator/Devices/9DF1EA58-F610-4F91-BEAB-A98AFEE321B1/data/Containers/Bundle/Application/9E121E8F-4C86-4350-BCE9-3E00067236A8/CidadaniaAtivaApp.app/www/index.html#/login
+2015-05-15 17:14:16.260 CidadaniaAtivaApp[3420:135035] Setting the WebView's frame to {{0, 0}, {375, 623}}
+2015-05-15 17:14:16.265 CidadaniaAtivaApp[3420:135035] THREAD WARNING: ['InAppBrowser'] took '64.920166' ms. Plugin should use a background thread.
+2015-05-15 17:26:43.169 CidadaniaAtivaApp[3780:141466] Apache Cordova native platform version 3.7.0 is starting.
+2015-05-15 17:26:43.170 CidadaniaAtivaApp[3780:141466] Multi-tasking -> Device: YES, App: YES
+2015-05-15 17:26:43.189 CidadaniaAtivaApp[3780:141466] Unlimited access to network resources
+2015-05-15 17:26:43.526 CidadaniaAtivaApp[3780:141466] [CDVTimer][keyboard] 0.052035ms
+2015-05-15 17:26:43.638 CidadaniaAtivaApp[3780:141466] [CDVTimer][statusbar] 111.631036ms
+2015-05-15 17:26:43.638 CidadaniaAtivaApp[3780:141466] [CDVTimer][TotalPluginStartup] 111.976027ms
+2015-05-15 17:26:43.800 CidadaniaAtivaApp[3780:141466] Resetting plugins due to page load.
+2015-05-15 17:26:44.412 CidadaniaAtivaApp[3780:141466] Finished load of: file:///Users/lucas/Library/Developer/CoreSimulator/Devices/9DF1EA58-F610-4F91-BEAB-A98AFEE321B1/data/Containers/Bundle/Application/E8E0F224-0276-4C75-A172-5C7651C098FB/CidadaniaAtivaApp.app/www/index.html#/login
+2015-05-15 17:26:44.531 CidadaniaAtivaApp[3780:141466] ERROR: Error: undefined is not a function (evaluating 'AuthService.getName()')
+AppCtrl@file:///Users/lucas/Library/Developer/CoreSimulator/Devices/9DF1EA58-F610-4F91-BEAB-A98AFEE321B1/data/Containers/Bundle/Application/E8E0F224-0276-4C75-A172-5C7651C098FB/CidadaniaAtivaApp.app/www/js/controllers/app.controller.js:12:46
+invoke@file:///Users/lucas/Library/Developer/CoreSimulator/Devices/9DF1EA58-F610-4F91-BEAB-A98AFEE321B1/data/Containers/Bundle/Application/E8E0F224-0276-4C75-A172-5C7651C098FB/CidadaniaAtivaApp.app/www/lib/ionic/js/ionic.bundle.js:12821:22
+instantiate@file:///Users/lucas/Library/Developer/CoreSimulator/Devices/9DF1EA58-F610-4F91-BEAB-A98AFEE321B1/data/Containers/Bundle/Application/E8E0F224-0276-4C75-A172-5C7651C098FB/CidadaniaAtivaApp.app/www/lib/ionic/js/ionic.bundle.js:12829:33
+file:///Users/lucas/Library/Developer/CoreSimulator/Devices/9DF1EA58-F610-4F91-BEAB-A98AFEE321B1/data/Containers/Bundle/Application/E8E0F224-0276-4C75-A172-5C7651C098FB/CidadaniaAtivaApp.app/www/lib/ionic/js/ionic.bundle.js:17098:39
+appendViewElement@file:///Users/lucas/Library/Developer/CoreSimulator/Devices/9DF1EA58-F610-4F91-BEAB-A98AFEE321B1/data/Containers/Bundle/Application/E8E0F224-0276-4C75-A172-5C7651C098FB/CidadaniaAtivaApp.app/www/lib/ionic/js/ionic.bundle.js:48110:35
+render@file:///Users/lucas/Library/Developer/CoreSimulator/Devices/9DF1EA58-F610-4F91-BEAB-A98AFEE321B1/data/Containers/Bundle/Application/E8E0F224-0276-4C75-A172-5C7651C098FB/CidadaniaAtivaApp.app/www/lib/ionic/js/ionic.bundle.js:46322:58
+init@file:///Users/lucas/Library/Developer/CoreSimulator/Devices/9DF1EA58-F610-4F91-BEAB-A98AFEE321B1/data/Containers/Bundle/Application/E8E0F224-0276-4C75-A172-5C7651C098FB/CidadaniaAtivaApp.app/www/lib/ionic/js/ionic.bundle.js:46242:26
+render@file:///Users/lucas/Library/Developer/CoreSimulator/Devices/9DF1EA58-F610-4F91-BEAB-A98AFEE321B1/data/Containers/Bundle/Application/E8E0F224-0276-4C75-A172-5C7651C098FB/CidadaniaAtivaApp.app/www/lib/ionic/js/ionic.bundle.js:47984:18
+register@file:///Users/lucas/Library/Developer/CoreSimulator/Devices/9DF1EA58-F610-4F91-BEAB-A98AFEE321B1/data/Containers/Bundle/Application/E8E0F224-0276-4C75-A172-5C7651C098FB/CidadaniaAtivaApp.app/www/lib/ionic/js/ionic.bundle.js:47942:16
+updateView@file:///Users/lucas/Library/Developer/CoreSimulator/Devices/9DF1EA58-F610-4F91-BEAB-A98AFEE321B1/data/Containers/Bundle/Application/E8E0F224-0276-4C75-A172-5C7651C098FB/CidadaniaAtivaApp.app/www/lib/ionic/js/ionic.bundle.js:53270:31
+file:///Users/lucas/Library/Developer/CoreSimulator/Devices/9DF1EA58-F610-4F91-BEAB-A98AFEE321B1/data/Containers/Bundle/Application/E8E0F224-0276-4C75-A172-5C7651C098FB/CidadaniaAtivaApp.app/www/lib/ionic/js/ionic.bundle.js:53247:21
+$broadcast@file:///Users/lucas/Library/Developer/CoreSimulator/Devices/9DF1EA58-F610-4F91-BEAB-A98AFEE321B1/data/Containers/Bundle/Application/E8E0F224-0276-4C75-A172-5C7651C098FB/CidadaniaAtivaApp.app/www/lib/ionic/js/ionic.bundle.js:23356:33
+file:///Users/lucas/Library/Developer/CoreSimulator/Devices/9DF1EA58-F610-4F91-BEAB-A98AFEE321B1/data/Containers/Bundle/Application/E8E0F224-0276-4C75-A172-5C7651C098FB/CidadaniaAtivaApp.app/www/lib/ionic/js/ionic.bundle.js:40826:32
+processQueue@file:///Users/lucas/Library/Developer/CoreSimulator/Devices/9DF1EA58-F610-4F91-BEAB-A98AFEE321B1/data/Containers/Bundle/Application/E8E0F224-0276-4C75-A172-5C7651C098FB/CidadaniaAtivaApp.app/www/lib/ionic/js/ionic.bundle.js:21825:29
+file:///Users/lucas/Library/Developer/CoreSimulator/Devices/9DF1EA58-F610-4F91-BEAB-A98AFEE321B1/data/Containers/Bundle/Application/E8E0F224-0276-4C75-A172-5C7651C098FB/CidadaniaAtivaApp.app/www/lib/ionic/js/ionic.bundle.js:21841:39
+$eval@file:///Users/lucas/Library/Developer/CoreSimulator/Devices/9DF1EA58-F610-4F91-BEAB-A98AFEE321B1/data/Containers/Bundle/Application/E8E0F224-0276-4C75-A172-5C7651C098FB/CidadaniaAtivaApp.app/www/lib/ionic/js/ionic.bundle.js:23037:28
+$digest@file:///Users/lucas/Library/Developer/CoreSimulator/Devices/9DF1EA58-F610-4F91-BEAB-A98AFEE321B1/data/Containers/Bundle/Application/E8E0F224-0276-4C75-A172-5C7651C098FB/CidadaniaAtivaApp.app/www/lib/ionic/js/ionic.bundle.js:22853:36
+$apply@file:///Users/lucas/Library/Developer/CoreSimulator/Devices/9DF1EA58-F610-4F91-BEAB-A98AFEE321B1/data/Containers/Bundle/Application/E8E0F224-0276-4C75-A172-5C7651C098FB/CidadaniaAtivaApp.app/www/lib/ionic/js/ionic.bundle.js:23142:31
+done@file:///Users/lucas/Library/Developer/CoreSimulator/Devices/9DF1EA58-F610-4F91-BEAB-A98AFEE321B1/data/Containers/Bundle/Application/E8E0F224-0276-4C75-A172-5C7651C098FB/CidadaniaAtivaApp.app/www/lib/ionic/js/ionic.bundle.js:18295:53
+completeRequest@file:///Users/lucas/Library/Developer/CoreSimulator/Devices/9DF1EA58-F610-4F91-BEAB-A98AFEE321B1/data/Containers/Bundle/Application/E8E0F224-0276-4C75-A172-5C7651C098FB/CidadaniaAtivaApp.app/www/lib/ionic/js/ionic.bundle.js:18485:15
+requestLoaded@file:///Users/lucas/Library/Developer/CoreSimulator/Devices/9DF1EA58-F610-4F91-BEAB-A98AFEE321B1/data/Containers/Bundle/Application/E8E0F224-0276-4C75-A172-5C7651C098FB/CidadaniaAtivaApp.app/www/lib/ionic/js/ionic.bundle.js:18426:24
+2015-05-15 17:26:46.459 CidadaniaAtivaApp[3780:141466] Setting the WebView's frame to {{0, 0}, {375, 623}}
+2015-05-15 17:26:46.484 CidadaniaAtivaApp[3780:141466] THREAD WARNING: ['InAppBrowser'] took '122.068115' ms. Plugin should use a background thread.
+2015-05-15 17:27:22.280 CidadaniaAtivaApp[3780:141466] Setting the WebView's frame to {{0, 0}, {375, 623}}
+2015-05-15 17:27:22.282 CidadaniaAtivaApp[3780:141466] THREAD WARNING: ['InAppBrowser'] took '55.885010' ms. Plugin should use a background thread.
+2015-05-15 17:27:39.211 CidadaniaAtivaApp[3780:141587] Terminating since there is no system app.
+2015-05-15 17:35:16.398 CidadaniaAtivaApp[4128:147645] Apache Cordova native platform version 3.7.0 is starting.
+2015-05-15 17:35:16.399 CidadaniaAtivaApp[4128:147645] Multi-tasking -> Device: YES, App: YES
+2015-05-15 17:35:16.401 CidadaniaAtivaApp[4128:147645] Unlimited access to network resources
+2015-05-15 17:35:16.491 CidadaniaAtivaApp[4128:147645] [CDVTimer][keyboard] 0.054002ms
+2015-05-15 17:35:16.513 CidadaniaAtivaApp[4128:147645] [CDVTimer][statusbar] 21.595001ms
+2015-05-15 17:35:16.513 CidadaniaAtivaApp[4128:147645] [CDVTimer][TotalPluginStartup] 21.951020ms
+2015-05-15 17:35:16.588 CidadaniaAtivaApp[4128:147645] Resetting plugins due to page load.
+2015-05-15 17:35:17.105 CidadaniaAtivaApp[4128:147645] Finished load of: file:///Users/lucas/Library/Developer/CoreSimulator/Devices/9DF1EA58-F610-4F91-BEAB-A98AFEE321B1/data/Containers/Bundle/Application/5FCC4DD5-B2EB-4527-828F-94FC0C38CF10/CidadaniaAtivaApp.app/www/index.html#/login
+2015-05-15 17:37:52.317 CidadaniaAtivaApp[4458:149465] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/lucas/Library/Developer/CoreSimulator/Devices/9DF1EA58-F610-4F91-BEAB-A98AFEE321B1/data/Containers/Data/Application/0441A0EF-A2E6-4EE3-82D8-E98A77520035/Library/Cookies/Cookies.binarycookies
+2015-05-15 17:37:52.427 CidadaniaAtivaApp[4458:149465] Apache Cordova native platform version 3.7.0 is starting.
+2015-05-15 17:37:52.427 CidadaniaAtivaApp[4458:149465] Multi-tasking -> Device: YES, App: YES
+2015-05-15 17:37:52.429 CidadaniaAtivaApp[4458:149465] Unlimited access to network resources
+2015-05-15 17:37:52.526 CidadaniaAtivaApp[4458:149465] [CDVTimer][keyboard] 0.057995ms
+2015-05-15 17:37:52.542 CidadaniaAtivaApp[4458:149465] [CDVTimer][statusbar] 16.267002ms
+2015-05-15 17:37:52.542 CidadaniaAtivaApp[4458:149465] [CDVTimer][TotalPluginStartup] 17.080963ms
+2015-05-15 17:37:52.810 CidadaniaAtivaApp[4458:149465] Resetting plugins due to page load.
+2015-05-15 17:37:53.745 CidadaniaAtivaApp[4458:149465] Finished load of: file:///Users/lucas/Library/Developer/CoreSimulator/Devices/9DF1EA58-F610-4F91-BEAB-A98AFEE321B1/data/Containers/Bundle/Application/233099F7-2923-42F8-9A0C-29A23E341688/CidadaniaAtivaApp.app/www/index.html#/login
+2015-05-15 17:37:58.822 CidadaniaAtivaApp[4458:149465] Setting the WebView's frame to {{0, 0}, {375, 623}}
+2015-05-15 17:37:58.826 CidadaniaAtivaApp[4458:149465] THREAD WARNING: ['InAppBrowser'] took '66.166992' ms. Plugin should use a background thread.
+2015-05-15 17:38:08.060 CidadaniaAtivaApp[4458:149465] The sign in flow was canceled
+2015-05-15 17:38:09.425 CidadaniaAtivaApp[4458:149465] Setting the WebView's frame to {{0, 0}, {375, 623}}
+2015-05-15 17:38:09.427 CidadaniaAtivaApp[4458:149465] THREAD WARNING: ['InAppBrowser'] took '45.942871' ms. Plugin should use a background thread.
+2015-05-15 17:48:12.464 CidadaniaAtivaApp[4813:156759] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/lucas/Library/Developer/CoreSimulator/Devices/9DF1EA58-F610-4F91-BEAB-A98AFEE321B1/data/Containers/Data/Application/D41FA323-643A-465F-9CF0-22A3D9875AC1/Library/Cookies/Cookies.binarycookies
+2015-05-15 17:48:12.586 CidadaniaAtivaApp[4813:156759] Apache Cordova native platform version 3.7.0 is starting.
+2015-05-15 17:48:12.586 CidadaniaAtivaApp[4813:156759] Multi-tasking -> Device: YES, App: YES
+2015-05-15 17:48:12.588 CidadaniaAtivaApp[4813:156759] Unlimited access to network resources
+2015-05-15 17:48:12.685 CidadaniaAtivaApp[4813:156759] [CDVTimer][keyboard] 0.068963ms
+2015-05-15 17:48:12.700 CidadaniaAtivaApp[4813:156759] [CDVTimer][statusbar] 15.024006ms
+2015-05-15 17:48:12.700 CidadaniaAtivaApp[4813:156759] [CDVTimer][TotalPluginStartup] 15.748024ms
+2015-05-15 17:48:12.964 CidadaniaAtivaApp[4813:156759] Resetting plugins due to page load.
+2015-05-15 17:48:13.584 CidadaniaAtivaApp[4813:156759] Finished load of: file:///Users/lucas/Library/Developer/CoreSimulator/Devices/9DF1EA58-F610-4F91-BEAB-A98AFEE321B1/data/Containers/Bundle/Application/C6CAA91E-066D-47A0-95C8-A29FCEFB32BD/CidadaniaAtivaApp.app/www/index.html#/login
+2015-05-15 17:48:15.952 CidadaniaAtivaApp[4813:156759] Setting the WebView's frame to {{0, 0}, {375, 623}}
+2015-05-15 17:48:15.956 CidadaniaAtivaApp[4813:156759] THREAD WARNING: ['InAppBrowser'] took '64.126221' ms. Plugin should use a background thread.
+2015-05-15 17:51:28.869 CidadaniaAtivaApp[5147:159616] Apache Cordova native platform version 3.7.0 is starting.
+2015-05-15 17:51:28.870 CidadaniaAtivaApp[5147:159616] Multi-tasking -> Device: YES, App: YES
+2015-05-15 17:51:28.872 CidadaniaAtivaApp[5147:159616] Unlimited access to network resources
+2015-05-15 17:51:28.959 CidadaniaAtivaApp[5147:159616] [CDVTimer][keyboard] 0.092030ms
+2015-05-15 17:51:28.979 CidadaniaAtivaApp[5147:159616] [CDVTimer][statusbar] 20.020008ms
+2015-05-15 17:51:28.979 CidadaniaAtivaApp[5147:159616] [CDVTimer][TotalPluginStartup] 20.438015ms
+2015-05-15 17:51:29.065 CidadaniaAtivaApp[5147:159616] Resetting plugins due to page load.
+2015-05-15 17:51:29.532 CidadaniaAtivaApp[5147:159616] Finished load of: file:///Users/lucas/Library/Developer/CoreSimulator/Devices/9DF1EA58-F610-4F91-BEAB-A98AFEE321B1/data/Containers/Bundle/Application/BB14980C-B5FD-4B68-8514-B574438163DF/CidadaniaAtivaApp.app/www/index.html#/app/main
+2015-05-15 17:52:01.562 CidadaniaAtivaApp[5465:160714] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/lucas/Library/Developer/CoreSimulator/Devices/9DF1EA58-F610-4F91-BEAB-A98AFEE321B1/data/Containers/Data/Application/F213FA45-B46C-4F5C-94C2-E529A78BDC1E/Library/Cookies/Cookies.binarycookies
+2015-05-15 17:52:01.681 CidadaniaAtivaApp[5465:160714] Apache Cordova native platform version 3.7.0 is starting.
+2015-05-15 17:52:01.682 CidadaniaAtivaApp[5465:160714] Multi-tasking -> Device: YES, App: YES
+2015-05-15 17:52:01.684 CidadaniaAtivaApp[5465:160714] Unlimited access to network resources
+2015-05-15 17:52:01.788 CidadaniaAtivaApp[5465:160714] [CDVTimer][keyboard] 0.090003ms
+2015-05-15 17:52:01.805 CidadaniaAtivaApp[5465:160714] [CDVTimer][statusbar] 17.254055ms
+2015-05-15 17:52:01.805 CidadaniaAtivaApp[5465:160714] [CDVTimer][TotalPluginStartup] 17.997980ms
+2015-05-15 17:52:02.076 CidadaniaAtivaApp[5465:160714] Resetting plugins due to page load.
+2015-05-15 17:52:02.675 CidadaniaAtivaApp[5465:160714] Finished load of: file:///Users/lucas/Library/Developer/CoreSimulator/Devices/9DF1EA58-F610-4F91-BEAB-A98AFEE321B1/data/Containers/Bundle/Application/C8685F20-3828-4389-87BA-FFFA7207BC0F/CidadaniaAtivaApp.app/www/index.html#/login
+2015-05-15 17:52:04.008 CidadaniaAtivaApp[5465:160714] Setting the WebView's frame to {{0, 0}, {375, 623}}
+2015-05-15 17:52:04.012 CidadaniaAtivaApp[5465:160714] THREAD WARNING: ['InAppBrowser'] took '60.773926' ms. Plugin should use a background thread.
+2015-05-15 17:52:48.868 CidadaniaAtivaApp[5465:160995] Terminating since there is no system app.
+2015-05-15 18:02:30.517 CidadaniaAtivaApp[5826:169304] Apache Cordova native platform version 3.7.0 is starting.
+2015-05-15 18:02:30.518 CidadaniaAtivaApp[5826:169304] Multi-tasking -> Device: YES, App: YES
+2015-05-15 18:02:30.520 CidadaniaAtivaApp[5826:169304] Unlimited access to network resources
+2015-05-15 18:02:30.605 CidadaniaAtivaApp[5826:169304] [CDVTimer][keyboard] 0.064015ms
+2015-05-15 18:02:30.623 CidadaniaAtivaApp[5826:169304] [CDVTimer][statusbar] 17.664015ms
+2015-05-15 18:02:30.623 CidadaniaAtivaApp[5826:169304] [CDVTimer][TotalPluginStartup] 18.051982ms
+2015-05-15 18:02:30.699 CidadaniaAtivaApp[5826:169304] Resetting plugins due to page load.
+2015-05-15 18:02:31.221 CidadaniaAtivaApp[5826:169304] Finished load of: file:///Users/lucas/Library/Developer/CoreSimulator/Devices/9DF1EA58-F610-4F91-BEAB-A98AFEE321B1/data/Containers/Bundle/Application/87FEEA97-37B0-40A9-B4A4-3A22A0ABAEB2/CidadaniaAtivaApp.app/www/index.html#/app/main
+2015-05-15 18:02:43.717 CidadaniaAtivaApp[5826:169304] Setting the WebView's frame to {{0, 0}, {375, 623}}
+2015-05-15 18:02:43.722 CidadaniaAtivaApp[5826:169304] THREAD WARNING: ['InAppBrowser'] took '60.093750' ms. Plugin should use a background thread.
+2015-05-16 11:13:25.846 CidadaniaAtivaApp[796:19568] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/lucas/Library/Developer/CoreSimulator/Devices/9DF1EA58-F610-4F91-BEAB-A98AFEE321B1/data/Containers/Data/Application/DE3FAD76-E4D9-49AC-953A-3A0A050F5F4F/Library/Cookies/Cookies.binarycookies
+2015-05-16 11:13:26.085 CidadaniaAtivaApp[796:19568] Apache Cordova native platform version 3.7.0 is starting.
+2015-05-16 11:13:26.085 CidadaniaAtivaApp[796:19568] Multi-tasking -> Device: YES, App: YES
+2015-05-16 11:13:26.100 CidadaniaAtivaApp[796:19568] Unlimited access to network resources
+2015-05-16 11:13:26.389 CidadaniaAtivaApp[796:19568] [CDVTimer][keyboard] 0.059009ms
+2015-05-16 11:13:26.488 CidadaniaAtivaApp[796:19568] [CDVTimer][statusbar] 98.526955ms
+2015-05-16 11:13:26.488 CidadaniaAtivaApp[796:19568] [CDVTimer][TotalPluginStartup] 99.238992ms
+2015-05-16 11:13:26.901 CidadaniaAtivaApp[796:19568] Resetting plugins due to page load.
+2015-05-16 11:13:27.471 CidadaniaAtivaApp[796:19568] Finished load of: file:///Users/lucas/Library/Developer/CoreSimulator/Devices/9DF1EA58-F610-4F91-BEAB-A98AFEE321B1/data/Containers/Bundle/Application/3EE37E67-E4FB-480A-A386-82F5B8420AA7/CidadaniaAtivaApp.app/www/index.html#/login
+2015-05-16 11:13:30.348 CidadaniaAtivaApp[796:19568] Setting the WebView's frame to {{0, 0}, {375, 623}}
+2015-05-16 11:13:30.358 CidadaniaAtivaApp[796:19568] THREAD WARNING: ['InAppBrowser'] took '101.625000' ms. Plugin should use a background thread.
+2015-05-17 12:55:38.827 CidadaniaAtivaApp[1079:90834] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/lucas/Library/Developer/CoreSimulator/Devices/9DF1EA58-F610-4F91-BEAB-A98AFEE321B1/data/Containers/Data/Application/C3A20A47-788A-479D-BD23-CFEE2654E54F/Library/Cookies/Cookies.binarycookies
+2015-05-17 12:55:39.093 CidadaniaAtivaApp[1079:90834] Apache Cordova native platform version 3.7.0 is starting.
+2015-05-17 12:55:39.094 CidadaniaAtivaApp[1079:90834] Multi-tasking -> Device: YES, App: YES
+2015-05-17 12:55:39.112 CidadaniaAtivaApp[1079:90834] Unlimited access to network resources
+2015-05-17 12:55:39.434 CidadaniaAtivaApp[1079:90834] [CDVTimer][keyboard] 0.057042ms
+2015-05-17 12:55:39.549 CidadaniaAtivaApp[1079:90834] [CDVTimer][statusbar] 114.812970ms
+2015-05-17 12:55:39.549 CidadaniaAtivaApp[1079:90834] [CDVTimer][TotalPluginStartup] 115.556955ms
+2015-05-17 12:55:39.880 CidadaniaAtivaApp[1079:90834] Resetting plugins due to page load.
+2015-05-17 12:55:40.466 CidadaniaAtivaApp[1079:90834] Finished load of: file:///Users/lucas/Library/Developer/CoreSimulator/Devices/9DF1EA58-F610-4F91-BEAB-A98AFEE321B1/data/Containers/Bundle/Application/FED0FF57-A643-4B75-AD37-61D997141254/CidadaniaAtivaApp.app/www/index.html#/login
+2015-05-17 12:55:43.369 CidadaniaAtivaApp[1079:90834] Setting the WebView's frame to {{0, 0}, {375, 623}}
+2015-05-17 12:55:43.386 CidadaniaAtivaApp[1079:90834] THREAD WARNING: ['InAppBrowser'] took '103.910889' ms. Plugin should use a background thread.
+2015-05-17 13:00:51.585 CidadaniaAtivaApp[1407:93617] Apache Cordova native platform version 3.7.0 is starting.
+2015-05-17 13:00:51.585 CidadaniaAtivaApp[1407:93617] Multi-tasking -> Device: YES, App: YES
+2015-05-17 13:00:51.589 CidadaniaAtivaApp[1407:93617] Unlimited access to network resources
+2015-05-17 13:00:51.674 CidadaniaAtivaApp[1407:93617] [CDVTimer][keyboard] 0.078976ms
+2015-05-17 13:00:51.690 CidadaniaAtivaApp[1407:93617] [CDVTimer][statusbar] 15.537977ms
+2015-05-17 13:00:51.690 CidadaniaAtivaApp[1407:93617] [CDVTimer][TotalPluginStartup] 16.075969ms
+2015-05-17 13:00:51.764 CidadaniaAtivaApp[1407:93617] Resetting plugins due to page load.
+2015-05-17 13:00:52.218 CidadaniaAtivaApp[1407:93617] Finished load of: file:///Users/lucas/Library/Developer/CoreSimulator/Devices/9DF1EA58-F610-4F91-BEAB-A98AFEE321B1/data/Containers/Bundle/Application/90BCB671-C222-419F-BC19-E548CF67C183/CidadaniaAtivaApp.app/www/index.html#/app/main
+2015-05-17 22:31:33.448 CidadaniaAtivaApp[2086:183504] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/lucas/Library/Developer/CoreSimulator/Devices/9DF1EA58-F610-4F91-BEAB-A98AFEE321B1/data/Containers/Data/Application/E26EB1A0-9A18-4235-9CD0-D181E6837911/Library/Cookies/Cookies.binarycookies
+2015-05-17 22:31:33.718 CidadaniaAtivaApp[2086:183504] Apache Cordova native platform version 3.7.0 is starting.
+2015-05-17 22:31:33.718 CidadaniaAtivaApp[2086:183504] Multi-tasking -> Device: YES, App: YES
+2015-05-17 22:31:33.738 CidadaniaAtivaApp[2086:183504] Unlimited access to network resources
+2015-05-17 22:31:34.072 CidadaniaAtivaApp[2086:183504] [CDVTimer][keyboard] 0.055015ms
+2015-05-17 22:31:34.183 CidadaniaAtivaApp[2086:183504] [CDVTimer][statusbar] 111.019969ms
+2015-05-17 22:31:34.183 CidadaniaAtivaApp[2086:183504] [CDVTimer][TotalPluginStartup] 111.635029ms
+2015-05-17 22:31:34.521 CidadaniaAtivaApp[2086:183504] Resetting plugins due to page load.
+2015-05-17 22:31:35.080 CidadaniaAtivaApp[2086:183504] Finished load of: file:///Users/lucas/Library/Developer/CoreSimulator/Devices/9DF1EA58-F610-4F91-BEAB-A98AFEE321B1/data/Containers/Bundle/Application/5BBC3AB9-DEC0-45D8-B722-7A2089283AF5/CidadaniaAtivaApp.app/www/index.html#/login
+2015-05-17 22:31:38.450 CidadaniaAtivaApp[2086:183504] Setting the WebView's frame to {{0, 0}, {375, 623}}
+2015-05-17 22:31:38.462 CidadaniaAtivaApp[2086:183504] THREAD WARNING: ['InAppBrowser'] took '107.857178' ms. Plugin should use a background thread.
+2015-05-20 23:30:59.323 CidadaniaAtivaApp[12579:123879] Apache Cordova native platform version 3.7.0 is starting.
+2015-05-20 23:30:59.325 CidadaniaAtivaApp[12579:123879] Multi-tasking -> Device: YES, App: YES
+2015-05-20 23:30:59.339 CidadaniaAtivaApp[12579:123879] Unlimited access to network resources
+2015-05-20 23:30:59.745 CidadaniaAtivaApp[12579:123879] [CDVTimer][keyboard] 0.096023ms
+2015-05-20 23:30:59.893 CidadaniaAtivaApp[12579:123879] [CDVTimer][statusbar] 148.369968ms
+2015-05-20 23:30:59.894 CidadaniaAtivaApp[12579:123879] [CDVTimer][TotalPluginStartup] 149.392962ms
+2015-05-20 23:31:00.218 CidadaniaAtivaApp[12579:123879] Resetting plugins due to page load.
+2015-05-20 23:31:01.009 CidadaniaAtivaApp[12579:123879] Finished load of: file:///Users/lucas/Library/Developer/CoreSimulator/Devices/9DF1EA58-F610-4F91-BEAB-A98AFEE321B1/data/Containers/Bundle/Application/A0028457-E4F8-43C8-B690-4E8107BB49D0/CidadaniaAtivaApp.app/www/index.html#/login
+2015-05-20 23:31:37.012 CidadaniaAtivaApp[12579:123879] Setting the WebView's frame to {{0, 0}, {375, 623}}
+2015-05-20 23:31:37.042 CidadaniaAtivaApp[12579:123879] THREAD WARNING: ['InAppBrowser'] took '200.401611' ms. Plugin should use a background thread.
+2015-05-20 23:33:54.414 CidadaniaAtivaApp[12579:125638] Terminating since there is no system app.
+2015-05-20 23:33:54.423 CidadaniaAtivaApp[12579:125614] Communications error: <OS_xpc_error: <error: 0x2d845f4> { count = 1, contents =
+	"XPCErrorDescription" => <string: 0x2d8483c> { length = 22, contents = "Connection interrupted" }
+}>
+2015-05-24 21:16:01.783 CidadaniaAtivaApp[1113:50883] Apache Cordova native platform version 3.7.0 is starting.
+2015-05-24 21:16:01.785 CidadaniaAtivaApp[1113:50883] Multi-tasking -> Device: YES, App: YES
+2015-05-24 21:16:01.802 CidadaniaAtivaApp[1113:50883] Unlimited access to network resources
+2015-05-24 21:16:02.104 CidadaniaAtivaApp[1113:50883] [CDVTimer][keyboard] 0.056028ms
+2015-05-24 21:16:02.214 CidadaniaAtivaApp[1113:50883] [CDVTimer][statusbar] 110.008955ms
+2015-05-24 21:16:02.214 CidadaniaAtivaApp[1113:50883] [CDVTimer][TotalPluginStartup] 110.639989ms
+2015-05-24 21:16:02.411 CidadaniaAtivaApp[1113:50883] Resetting plugins due to page load.
+2015-05-24 21:16:03.298 CidadaniaAtivaApp[1113:50883] Finished load of: file:///Users/lucas/Library/Developer/CoreSimulator/Devices/9DF1EA58-F610-4F91-BEAB-A98AFEE321B1/data/Containers/Bundle/Application/058EB6E9-8ED0-4182-A9FC-43579D56A946/CidadaniaAtivaApp.app/www/index.html#/login
+2015-05-24 21:16:56.614 CidadaniaAtivaApp[1439:52217] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/lucas/Library/Developer/CoreSimulator/Devices/9DF1EA58-F610-4F91-BEAB-A98AFEE321B1/data/Containers/Data/Application/4CAF9A56-08AD-462E-8CBF-CEE1832AD857/Library/Cookies/Cookies.binarycookies
+2015-05-24 21:16:56.763 CidadaniaAtivaApp[1439:52217] Apache Cordova native platform version 3.7.0 is starting.
+2015-05-24 21:16:56.764 CidadaniaAtivaApp[1439:52217] Multi-tasking -> Device: YES, App: YES
+2015-05-24 21:16:56.766 CidadaniaAtivaApp[1439:52217] Unlimited access to network resources
+2015-05-24 21:16:56.849 CidadaniaAtivaApp[1439:52217] [CDVTimer][keyboard] 0.075996ms
+2015-05-24 21:16:56.870 CidadaniaAtivaApp[1439:52217] [CDVTimer][statusbar] 20.404041ms
+2015-05-24 21:16:56.870 CidadaniaAtivaApp[1439:52217] [CDVTimer][TotalPluginStartup] 21.086991ms
+2015-05-24 21:16:57.228 CidadaniaAtivaApp[1439:52217] Resetting plugins due to page load.
+2015-05-24 21:16:58.348 CidadaniaAtivaApp[1439:52217] Finished load of: file:///Users/lucas/Library/Developer/CoreSimulator/Devices/9DF1EA58-F610-4F91-BEAB-A98AFEE321B1/data/Containers/Bundle/Application/BCA2E154-E7F0-4CF4-8E7A-37E156B7F364/CidadaniaAtivaApp.app/www/index.html#/login
+2015-05-24 21:17:23.288 CidadaniaAtivaApp[1439:52217] Setting the WebView's frame to {{0, 0}, {375, 623}}
+2015-05-24 21:17:23.300 CidadaniaAtivaApp[1439:52217] THREAD WARNING: ['InAppBrowser'] took '97.791992' ms. Plugin should use a background thread.
+2015-05-24 21:18:46.662 CidadaniaAtivaApp[1439:52679] Terminating since there is no system app.

@@ -1,0 +1,200 @@
+/* Empty. Add your own CSS if you like */
+
+map {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.scroll {
+    height: 100%;
+}
+
+.angular-google-map-container {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+
+.angular-google-map {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.marker-labels {
+    color: red;
+    background-color: white;
+    font-family: "Lucida Grande", "Arial", sans-serif;
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
+    border: 1px solid black;
+    white-space: nowrap;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+.fixed-outside{
+    position: absolute;
+    bottom: 0;
+    color: #fff;
+    overflow: hidden;
+    width: 100%;
+    height: 95px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    background-color: rgba(0,0,0, 0.3);
+}
+
+#ocorrencia{
+    width: 100%;
+    font-weight: bold;
+    background-color: #009966;
+    color: #ffffff;
+}
+
+#button-location{
+    border: 0;
+    background-color: #fff;
+    margin-left: 0;
+    margin-right: 0;
+    padding-right: 0;
+}
+
+.login{
+    background: url(../img/fundo.jpg) no-repeat center center fixed;
+    -webkit-filter: grayscale(90%) blur(2px);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.logo-welcome {
+    position: absolute;
+    overflow: hidden;
+    top:50%;
+    left:50%;
+    margin-top:-235px;
+    margin-left:-100px;
+    width: 210px;
+    height: 120px;
+    background: url(../img/logo.png) no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+}
+
+.logo-text{
+    position: absolute;
+    overflow: hidden;
+    top:50%;
+    left:50%;
+    margin-top:-115px;
+    margin-left:-100px;
+    color: #fff;
+    font-size: 28px;
+    font-weight: 700;
+    height: 30px;
+    text-shadow: 2px 2px gray;
+}
+
+.login-btns {
+    position: absolute;
+    width: 250px;
+    position: absolute;
+    overflow: hidden;
+    top:50%;
+    left:50%;
+    margin-top:35px;
+    margin-left:-120px;
+}
+
+.thumbnail-denuncia{
+    padding-left: 0;
+    padding-top: 0;
+}
+
+#social-links {
+    text-align: center;
+}
+
+#social-links ul li {
+    width: 250px;
+    font-size: 14px;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+#social-links ul li span.ifacebook,
+#social-links ul li span.itwitter,
+#social-links ul li span.igoogleplus {
+    display: inline-table;
+    width: 41px;
+    text-align: center;
+}
+#social-links ul li span.ifacebook { background: #354f88; padding: 10px 0 10px 0; }
+#social-links ul li span.itwitter { background: #40a2d1; padding: 10px 0 10px 0; }
+#social-links ul li span.igoogleplus { background: #ce3e26; padding: 10px 0 10px 0; }
+#social-links ul li a.afacebook,
+#social-links ul li a.atwitter,
+#social-links ul li a.agoogleplus {
+    display: inline-table;
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 0 0 -5px;
+    width: 200px;
+    text-align: center;
+}
+#social-links ul li a.afacebook { background: #3b5998; padding: 15px 0 10px 0; }
+#social-links ul li a.atwitter { background: #45b0e3; padding: 15px 0 10px 0; }
+#social-links ul li a.agoogleplus { background: #de4c34; padding: 15px 0 10px 0; }
+#social-links ul li a.afacebook:active { background: #354f88; }
+#social-links ul li a.atwitter:active { background: #40a2d1; }
+#social-links ul li a.agoogleplus:active { background: #ce3e26; }
+
+.name {
+    position: relative;
+    top: 100px;
+    color: #ffffff;
+}
+
+.identify {
+    position: relative;
+    color: gray;
+    top: 90px;
+}
+
+.item-menu{
+    line-height: 45px;
+}
+
+.item-picture{
+    text-align: center;
+    min-height: 72px;
+    height: 160px;
+}
+
+.item-picture > img:first-child{
+    background-color: #fff;
+    position: absolute;
+    top: 15px;
+    left: 35%;
+    max-width: 80px;
+    max-height: 80px;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.dark .item{
+    border: none;
+}
+
+.dark, .item-content{
+    background-color: #3f4041 !important;
+    color: #ffffff;
+}

@@ -1,0 +1,45 @@
+<ion-view view-title="Inserir ocorrência" hide-back-button="true">
+    <ion-content class="has-header">
+        <form ng-submit="createDenuncia(task)">
+            <div class="card">
+                <div class="item item-divider">
+                    Local
+                </div>
+                <div class="item item-text-wrap">
+                    {{address}}
+                </div>
+            </div>
+            <div class="list list-inset">
+                <label class="item item-input item-select">
+                    <div class="input-label">
+                        Tipo
+                    </div>
+                    <select>
+                        <option>Escada Acessível</option>
+                        <option>Linha-guia</option>
+                        <option>Piso Tátil</option>
+                        <option>Rampa de Acesso</option>
+                        <option>Sinalização Sonora</option>
+                        <option>Sinalização Tátil</option>
+                        <option>Sinalização Visual</option>
+                        <option>Tecnologia Assistiva</option>
+                        <option>Banheiro Acessível</option>
+                    </select>
+                </label>
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">Observação</span>
+                    <textarea placeholder="Observação" rows="6"></textarea>
+                </label>
+                <div class="item-input-inset">
+                    <div class="item-input-inset thumbnail-denuncia">
+                        <img src="../img/no_image.png" />
+                    </div>
+                    <button class="button button-block ion-camera" ng-click="addImage()">
+                        Tirar uma foto
+                    </button>
+                </div>
+                <button type="submit" class="button button-large padding" id="ocorrencia">Enviar ocorrência</button>
+            </div>
+        </form>
+    </ion-content>
+</ion-view>
