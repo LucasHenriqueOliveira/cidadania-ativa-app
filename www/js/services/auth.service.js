@@ -17,13 +17,25 @@
 
                     $http.get("https://graph.facebook.com/v2.2/me", { params: { access_token: result.access_token, fields: "id,name,email,picture", format: "json" }}).then(function(result) {
 
-                        $localstorage.set('authToken', result.access_token);
-                        $localstorage.set('userId', result.data.id);
-                        $localstorage.set('userName', result.data.name);
-                        $localstorage.set('userIdentify', result.data.email);
-                        $localstorage.set('userPicture', result.data.picture.data.url);
+                        //var params = { name: result.data.name, identify: result.data.email, picture: result.data.picture.data.url, type: 1 };
+                        //
+                        //var urlPost = "http://www.cidadaniaativa.com.br/api/v1/user";
+                        //$http.post(urlPost, params,
+                        //    { headers: {'Content-Type': 'application/x-www-form-urlencoded'} }
+                        //)
+                        //    .then(function(response) {
 
-                        $location.path('/app/main');
+                                $localstorage.set('authToken', result.access_token);
+                                $localstorage.set('userId', result.data.id);
+                                $localstorage.set('userName', result.data.name);
+                                $localstorage.set('userIdentify', result.data.email);
+                                $localstorage.set('userPicture', result.data.picture.data.url);
+
+                                $location.path('/app/main');
+                            //}, function(error) {
+                            //    alert("Login failure" + JSON.stringify(error));
+                            //    console.log(error);
+                            //});
 
                     }, function(error) {
                         alert("There was a problem getting your profile.  Check the logs for details.");
@@ -46,13 +58,26 @@
 
                     $http.get("https://www.googleapis.com/oauth2/v1/userinfo?alt=json", { params: { access_token: result.access_token }}).then(function(result) {
 
-                        $localstorage.set('authToken', result.access_token);
-                        $localstorage.set('userId', result.data.id);
-                        $localstorage.set('userName', result.data.name);
-                        $localstorage.set('userIdentify', result.data.email);
-                        $localstorage.set('userPicture', result.data.picture);
+                        //var params = { name: result.data.name, identify: result.data.email, picture: result.data.picture.data.url, type: 1 };
+                        //
+                        //var urlPost = "http://www.cidadaniaativa.com.br/api/v1/user";
+                        //$http.post(urlPost, params,
+                        //    { headers: {'Content-Type': 'application/x-www-form-urlencoded'} }
+                        //)
+                        //    .then(function(response) {
 
-                        $location.path('/app/main');
+                                $localstorage.set('authToken', result.access_token);
+                                $localstorage.set('userId', result.data.id);
+                                $localstorage.set('userName', result.data.name);
+                                $localstorage.set('userIdentify', result.data.email);
+                                $localstorage.set('userPicture', result.data.picture);
+
+                                $location.path('/app/main');
+
+                        //}, function(error) {
+                        //    alert("Login failure" + JSON.stringify(error));
+                        //    console.log(error);
+                        //});
 
                     }, function(error) {
                         alert("There was a problem getting your profile.  Check the logs for details.");
@@ -91,12 +116,25 @@
 
                     $http.get("https://api.twitter.com/1.1/account/verify_credentials.json").then(function(result) {
 
-                        $localstorage.set('userId', result.data.id);
-                        $localstorage.set('userName', result.data.name);
-                        $localstorage.set('userIdentify', result.data.screen_name);
-                        $localstorage.set('userPicture', result.data.profile_image_url);
+                        //var params = { name: result.data.name, identify: result.data.email, picture: result.data.picture.data.url, type: 1 };
+                        //
+                        //var urlPost = "http://www.cidadaniaativa.com.br/api/v1/user";
+                        //$http.post(urlPost, params,
+                        //    { headers: {'Content-Type': 'application/x-www-form-urlencoded'} }
+                        //)
+                        //    .then(function(response) {
 
-                        $location.path('/app/main');
+                                $localstorage.set('userId', result.data.id);
+                                $localstorage.set('userName', result.data.name);
+                                $localstorage.set('userIdentify', result.data.screen_name);
+                                $localstorage.set('userPicture', result.data.profile_image_url);
+
+                                $location.path('/app/main');
+
+                        //}, function(error) {
+                        //    alert("Login failure" + JSON.stringify(error));
+                        //    console.log(error);
+                        //});
 
                     }, function(error) {
                         alert("There was a problem getting your profile.  Check the logs for details.");
