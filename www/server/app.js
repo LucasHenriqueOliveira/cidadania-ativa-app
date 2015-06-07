@@ -21,7 +21,7 @@ localRouter = require('./routes/localRoute')(Local);
 app.use('/api/local', localRouter);
 
 userRouter = require('./routes/userRoute')(User);
-app.use('/api/user', userRouter);
+app.use('/api/users', userRouter);
 
 
 app.listen(port, function(){
