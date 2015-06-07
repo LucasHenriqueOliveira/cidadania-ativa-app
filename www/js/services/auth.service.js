@@ -17,13 +17,13 @@
 
                     $http.get("https://graph.facebook.com/v2.2/me", { params: { access_token: result.access_token, fields: "id,name,email,picture", format: "json" }}).then(function(result) {
 
-                        //var params = { name: result.data.name, identify: result.data.email, picture: result.data.picture.data.url, type: 1 };
-                        //
-                        //var urlPost = "http://www.cidadaniaativa.com.br/api/v1/user";
-                        //$http.post(urlPost, params,
-                        //    { headers: {'Content-Type': 'application/x-www-form-urlencoded'} }
-                        //)
-                        //    .then(function(response) {
+                        var params = { name: result.data.name, identify: result.data.email, picture: result.data.picture.data.url, type: 1 };
+
+                        var urlPost = $location.$$protocol + '://'+ $location.$$host + ':' + $location.$$port + "/api/v1/users";
+                        $http.post(urlPost, params,
+                            { headers: {'Content-Type': 'application/x-www-form-urlencoded'} }
+                        )
+                            .then(function(response) {
 
                                 $localstorage.set('authToken', result.access_token);
                                 $localstorage.set('userId', result.data.id);
@@ -32,10 +32,10 @@
                                 $localstorage.set('userPicture', result.data.picture.data.url);
 
                                 $location.path('/app/main');
-                            //}, function(error) {
-                            //    alert("Login failure" + JSON.stringify(error));
-                            //    console.log(error);
-                            //});
+                            }, function(error) {
+                                alert("Login failure" + JSON.stringify(error));
+                                console.log(error);
+                            });
 
                     }, function(error) {
                         alert("There was a problem getting your profile.  Check the logs for details.");
@@ -58,13 +58,13 @@
 
                     $http.get("https://www.googleapis.com/oauth2/v1/userinfo?alt=json", { params: { access_token: result.access_token }}).then(function(result) {
 
-                        //var params = { name: result.data.name, identify: result.data.email, picture: result.data.picture.data.url, type: 1 };
-                        //
-                        //var urlPost = "http://www.cidadaniaativa.com.br/api/v1/user";
-                        //$http.post(urlPost, params,
-                        //    { headers: {'Content-Type': 'application/x-www-form-urlencoded'} }
-                        //)
-                        //    .then(function(response) {
+                        var params = { name: result.data.name, identify: result.data.email, picture: result.data.picture.data.url, type: 1 };
+
+                        var urlPost = $location.$$protocol + '://'+ $location.$$host + ':' + $location.$$port + "/api/v1/users";
+                        $http.post(urlPost, params,
+                            { headers: {'Content-Type': 'application/x-www-form-urlencoded'} }
+                        )
+                            .then(function(response) {
 
                                 $localstorage.set('authToken', result.access_token);
                                 $localstorage.set('userId', result.data.id);
@@ -74,10 +74,10 @@
 
                                 $location.path('/app/main');
 
-                        //}, function(error) {
-                        //    alert("Login failure" + JSON.stringify(error));
-                        //    console.log(error);
-                        //});
+                            }, function(error) {
+                                alert("Login failure" + JSON.stringify(error));
+                                console.log(error);
+                            });
 
                     }, function(error) {
                         alert("There was a problem getting your profile.  Check the logs for details.");
@@ -116,13 +116,13 @@
 
                     $http.get("https://api.twitter.com/1.1/account/verify_credentials.json").then(function(result) {
 
-                        //var params = { name: result.data.name, identify: result.data.email, picture: result.data.picture.data.url, type: 1 };
-                        //
-                        //var urlPost = "http://www.cidadaniaativa.com.br/api/v1/user";
-                        //$http.post(urlPost, params,
-                        //    { headers: {'Content-Type': 'application/x-www-form-urlencoded'} }
-                        //)
-                        //    .then(function(response) {
+                        var params = { name: result.data.name, identify: result.data.email, picture: result.data.picture.data.url, type: 1 };
+
+                        var urlPost = $location.$$protocol + '://'+ $location.$$host + ':' + $location.$$port + "/api/v1/users";
+                        $http.post(urlPost, params,
+                            { headers: {'Content-Type': 'application/x-www-form-urlencoded'} }
+                        )
+                            .then(function(response) {
 
                                 $localstorage.set('userId', result.data.id);
                                 $localstorage.set('userName', result.data.name);
@@ -131,10 +131,10 @@
 
                                 $location.path('/app/main');
 
-                        //}, function(error) {
-                        //    alert("Login failure" + JSON.stringify(error));
-                        //    console.log(error);
-                        //});
+                            }, function(error) {
+                                alert("Login failure" + JSON.stringify(error));
+                                console.log(error);
+                            });
 
                     }, function(error) {
                         alert("There was a problem getting your profile.  Check the logs for details.");

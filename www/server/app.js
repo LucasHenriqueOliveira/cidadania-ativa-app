@@ -18,10 +18,10 @@ app.get('/', function(req, res){
 });
 
 localRouter = require('./routes/localRoute')(Local);
-app.use('/api/local', localRouter);
+app.use('/api/v1/local', localRouter);
 
 userRouter = require('./routes/userRoute')(User);
-app.use('/api/users', userRouter);
+app.use('/api/v1/users', userRouter);
 
 
 app.listen(port, function(){
