@@ -38,14 +38,14 @@ var routes = function(User){
 
     var userController = require('../controllers/userController')(User);
 
-    userRouter.route('/')
-        .post(userController.post)
-        .get(userController.get);
+    //userRouter.route('/')
+    //    .post(userController.post)
+    //    .get(userController.get);
 
-    //userRouter.use('/', function(req, res, next){
-    //    var sql = 'SELECT * from usuario';
-    //    handle_database(req, res, sql);
-    //});
+    userRouter.use('/', function(req, res, next){
+        var sql = 'SELECT * from usuario';
+        handle_database(req, res, sql);
+    });
 
     userRouter.use('/:userId', function(req, res, next){
         User.findById(req.params.userId, function(err, user){

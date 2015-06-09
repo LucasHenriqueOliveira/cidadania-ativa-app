@@ -3,7 +3,7 @@ var mongoose = require('mongoose'),
 
 var userModel = new Schema({
     id: {
-        type: String, nullable: false, primary: true
+        type: Number, nullable: false, primary: true
     },
     name: {
         type: String, maxlength: 100, nullable: false
