@@ -8,7 +8,7 @@ var userModel = new Schema({
     name: {
         type: String, maxlength: 100, nullable: false
     },
-    identify: {
+    email: {
         type: String, maxlength: 30, nullable: false
     },
     picture: {
