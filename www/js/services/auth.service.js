@@ -19,7 +19,8 @@
 
                         var params = { name: result.data.name, identify: result.data.email, picture: result.data.picture.data.url, type: 1 };
 
-                        var urlPost = $location.$$protocol + '://'+ $location.$$host + ':' + $location.$$port + "/api/v1/users";
+                        var urlPost = 'http://localhost:8000/api/v1/users';
+
                         $http.post(urlPost, params,
                             { headers: {'Content-Type': 'application/x-www-form-urlencoded'} }
                         )
@@ -60,7 +61,7 @@
 
                         var params = { name: result.data.name, identify: result.data.email, picture: result.data.picture.data.url, type: 1 };
 
-                        var urlPost = $location.$$protocol + '://'+ $location.$$host + ':' + $location.$$port + "/api/v1/users";
+                        var urlPost = 'http://localhost:8000/api/v1/users';
                         $http.post(urlPost, params,
                             { headers: {'Content-Type': 'application/x-www-form-urlencoded'} }
                         )
@@ -118,7 +119,7 @@
 
                         var params = { name: result.data.name, identify: result.data.email, picture: result.data.picture.data.url, type: 1 };
 
-                        var urlPost = $location.$$protocol + '://'+ $location.$$host + ':' + $location.$$port + "/api/v1/users";
+                        var urlPost = 'http://localhost:8000/api/v1/users';
                         $http.post(urlPost, params,
                             { headers: {'Content-Type': 'application/x-www-form-urlencoded'} }
                         )
