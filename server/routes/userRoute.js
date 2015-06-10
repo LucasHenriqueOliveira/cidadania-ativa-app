@@ -36,16 +36,47 @@ function handle_database(req,res, sql) {
 var routes = function(User){
     var userRouter = express.Router();
 
-    var userController = require('../controllers/userController')(User);
+    //var userController = require('../controllers/userController')(User);
 
     //userRouter.route('/')
     //    .post(userController.post)
     //    .get(userController.get);
 
-    userRouter.use('/', function(req, res, next){
-        var sql = 'SELECT * from usuario';
-        handle_database(req, res, sql);
-    });
+    userRouter.route('/')
+        .post(function(req, res, user){
+            var user = new User(req.body);
+
+            if(!req.body.name && !req.body.identify){
+                res.status(400);
+                res.send('Name and identify are required.');
+            } else{
+                pool.getConnection(function(err,connection){
+                    if (err) {
+                        connection.release();
+                        res.json({"code" : 100, "status" : "Error in connection database"});
+                        return;
+                    }
+
+                    connection.query('INSERT INTO usuario SET ?', user,function(err,info){
+                        connection.release();
+                        if(!err) {
+                            res.status(400);
+                            res.json(info);
+                        }
+                    });
+                });
+            }
+
+        })
+        .get(function(req, res, next){
+                var sql = 'SELECT * from usuario';
+                handle_database(req, res, sql);
+        });
+
+    //userRouter.use('/', function(req, res, next){
+    //    var sql = 'SELECT * from usuario';
+    //    handle_database(req, res, sql);
+    //});
 
     userRouter.use('/:userId', function(req, res, next){
         User.findById(req.params.userId, function(err, user){

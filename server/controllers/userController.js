@@ -21,6 +21,8 @@ var userController = function(User){
                 res.status(500).send(err);
             else{
 
+                var sql = 'SELECT * from usuario';
+                handle_database(req, res, sql);
                 var returnUsers = [];
                 users.forEach(function(element, index, array){
                     var newUser = element.toJSON();
