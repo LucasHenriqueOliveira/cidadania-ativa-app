@@ -5,7 +5,7 @@ module.exports = function(sequelize, DataTypes) {
         id: {
             type: DataTypes.INTEGER,
             autoIncrement: true,
-            primaryKey: true,
+            primaryKey: true
         },
         name: {
             type: DataTypes.STRING,
@@ -13,8 +13,7 @@ module.exports = function(sequelize, DataTypes) {
         },
         email: {
             type: DataTypes.STRING,
-            allowNull: false,
-            unique: true
+            allowNull: false
         },
         picture: {
             type: DataTypes.STRING
@@ -23,6 +22,7 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.INTEGER
         }
     }, {
+        timestamps: false,
         instanceMethods: {
             retrieveAll: function(onSuccess, onError) {
                 User.findAll({}, {raw: true}).success(onSuccess).error(onError);
@@ -34,9 +34,9 @@ module.exports = function(sequelize, DataTypes) {
                 var name = this.name;
                 var email = this.email;
                 var picture = this.picture;
-                var type = this.type;
+                var rede_social = this.rede_social;
 
-                User.build({ name: name, email: email, picture: picture,  type: type})
+                User.build({ name: name, email: email, picture: picture,  rede_social: rede_social})
                     .save().success(onSuccess).error(onError);
             },
             updateById: function(id, onSuccess, onError) {
@@ -44,9 +44,9 @@ module.exports = function(sequelize, DataTypes) {
                 var name = this.name;
                 var email = this.email;
                 var picture = this.picture;
-                var type = this.type;
+                var rede_social = this.rede_social;
 
-                User.update({ name: name, email: email, picture: picture,  type: type},{where: {id: id} }).success(onSuccess).error(onError);
+                User.update({ name: name, email: email, picture: picture,  rede_social: rede_social},{where: {id: id} }).success(onSuccess).error(onError);
             },
             removeById: function(id, onSuccess, onError) {
                 User.destroy({where: {id: id}}).success(onSuccess).error(onError);
