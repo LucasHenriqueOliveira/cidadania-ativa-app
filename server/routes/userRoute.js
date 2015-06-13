@@ -8,20 +8,19 @@ router.post('/', function(req, res) {
     var picture = req.body.picture;
     var rede_social = req.body.rede_social;
 
-    models.User.findOrCreate({email: email, rede_social: rede_social},{ name: name, email: email, picture: picture, rede_social: rede_social})
-        .success(function(user, created) {
-            res.json({ message: 'User created!' });
-            res.send(200);
+    models.User.findOrCreate({where:{email: email, rede_social: rede_social}, defaults:{name: name, email: email, picture: picture, rede_social: rede_social}})
+        .spread(function(user, created) {
+            if(created){
+                res.status(201);
+                res.json({ message: 'User created!' });
+            } else{
+                res.status(200);
+                res.json({ message: 'User exist!' });
+            }
         })
         .error(function(err){
             console.log('Error occured' + err);
         });
-    //    .then(function(user) {
-    //        res.status(201);
-    //        res.json({ message: 'User created!' });
-    //}, function(error) {
-    //    res.send(error);
-    //});
 });
 
 router.get('/', function(req, res) {
@@ -31,7 +30,8 @@ router.get('/', function(req, res) {
                 res.status(200);
                 res.json(users);
             } else {
-                res.send(401, "User not found");
+                res.status(400);
+                res.json({ message: 'User not found!' });
             }
     }, function(error) {
         res.send(error);

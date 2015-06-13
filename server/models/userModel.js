@@ -22,7 +22,10 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.INTEGER
         }
     }, {
-        timestamps: false,
+        timestamps: true,
+        createdAt: 'createdAt',
+        updatedAt: 'updatedAt',
+        deletedAt: 'deletedAt',
         instanceMethods: {
             retrieveAll: function(onSuccess, onError) {
                 User.findAll({}, {raw: true}).success(onSuccess).error(onError);
