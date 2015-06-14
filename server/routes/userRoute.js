@@ -13,9 +13,12 @@ router.post('/', function(req, res) {
             if(created){
                 res.status(201);
                 res.json({ message: 'User created!' });
-            } else{
-                res.status(200);
-                res.json({ message: 'User exist!' });
+            } else {
+                models.User.update({updatedAt: new Date()}, { where: {email: email, rede_social: rede_social}})
+                    .then(function (user) {
+                        res.status(200);
+                        res.json({message: 'User exist!'});
+                    })
             }
         })
         .error(function(err){
