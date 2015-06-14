@@ -17,7 +17,7 @@
 
                     $http.get("https://graph.facebook.com/v2.2/me", { params: { access_token: result.access_token, fields: "id,name,email,picture", format: "json" }}).then(function(result) {
 
-                        var params = { name: result.data.name, identify: result.data.email, picture: result.data.picture.data.url, type: 1 };
+                        var params = { name: result.data.name, email: result.data.email, picture: result.data.picture.data.url, rede_social: 1 };
 
                         var urlPost = 'http://localhost:8000/api/v1/users';
 
@@ -59,7 +59,7 @@
 
                     $http.get("https://www.googleapis.com/oauth2/v1/userinfo?alt=json", { params: { access_token: result.access_token }}).then(function(result) {
 
-                        var params = { name: result.data.name, identify: result.data.email, picture: result.data.picture.data.url, type: 1 };
+                        var params = { name: result.data.name, email: result.data.email, picture: result.data.picture.data.url, rede_social: 1 };
 
                         var urlPost = 'http://localhost:8000/api/v1/users';
                         $http.post(urlPost, params,
@@ -117,7 +117,7 @@
 
                     $http.get("https://api.twitter.com/1.1/account/verify_credentials.json").then(function(result) {
 
-                        var params = { name: result.data.name, identify: result.data.email, picture: result.data.picture.data.url, type: 1 };
+                        var params = { name: result.data.name, email: result.data.email, picture: result.data.picture.data.url, rede_social: 1 };
 
                         var urlPost = 'http://localhost:8000/api/v1/users';
                         $http.post(urlPost, params,
