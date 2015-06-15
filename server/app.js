@@ -14,8 +14,11 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+//routes
 app.use('/api/v1', routes);
 app.use('/api/v1/users', userRouter);
+
 
 app.listen(port, function(){
     console.log('Gulp is running my app on PORT: ' + port);

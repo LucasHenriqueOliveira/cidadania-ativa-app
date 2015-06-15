@@ -1,4 +1,6 @@
 var userController = function(models){
+
+    // Find user that exist and update the updatedAt field or create new user
     var post = function(req, res){
         var name = req.body.name;
         var email = req.body.email;
@@ -25,6 +27,7 @@ var userController = function(models){
 
     }
 
+    // return all the users
     var get = function(req, res){
         models.User.findAll()
             .then(function(users) {
