@@ -17,13 +17,17 @@
 
                     $http.get("https://graph.facebook.com/v2.2/me", { params: { access_token: result.access_token, fields: "id,name,email,picture", format: "json" }}).then(function(result) {
 
-                        var params = { name: result.data.name, email: result.data.email, picture: result.data.picture.data.url, rede_social: 1 };
-
-                        var urlPost = 'http://localhost:8000/api/v1/users';
-
-                        $http.post(urlPost, params,
-                            { headers: {'Content-Type': 'application/x-www-form-urlencoded'} }
-                        )
+                        $http({
+                            method: 'POST',
+                            url: 'http://localhost:8000/api/v1/users',
+                            data: {
+                                name: result.data.name,
+                                email: result.data.email,
+                                nickname: null,
+                                picture: result.data.picture.data.url,
+                                rede_social: 1
+                            }
+                        })
                             .then(function(response) {
 
                                 $localstorage.set('authToken', result.access_token);
@@ -59,12 +63,17 @@
 
                     $http.get("https://www.googleapis.com/oauth2/v1/userinfo?alt=json", { params: { access_token: result.access_token }}).then(function(result) {
 
-                        var params = { name: result.data.name, email: result.data.email, picture: result.data.picture.data.url, rede_social: 1 };
-
-                        var urlPost = 'http://localhost:8000/api/v1/users';
-                        $http.post(urlPost, params,
-                            { headers: {'Content-Type': 'application/x-www-form-urlencoded'} }
-                        )
+                        $http({
+                            method: 'POST',
+                            url: 'http://localhost:8000/api/v1/users',
+                            data: {
+                                name: result.data.name,
+                                email: result.data.email,
+                                nickname: null,
+                                picture: result.data.picture,
+                                rede_social: 2
+                            }
+                        })
                             .then(function(response) {
 
                                 $localstorage.set('authToken', result.access_token);
@@ -117,12 +126,17 @@
 
                     $http.get("https://api.twitter.com/1.1/account/verify_credentials.json").then(function(result) {
 
-                        var params = { name: result.data.name, email: result.data.email, picture: result.data.picture.data.url, rede_social: 1 };
-
-                        var urlPost = 'http://localhost:8000/api/v1/users';
-                        $http.post(urlPost, params,
-                            { headers: {'Content-Type': 'application/x-www-form-urlencoded'} }
-                        )
+                        $http({
+                            method: 'POST',
+                            url: 'http://localhost:8000/api/v1/users',
+                            data: {
+                                name: result.data.name,
+                                email: null,
+                                nickname: result.data.screen_name,
+                                picture: result.data.profile_image_url,
+                                rede_social: 3
+                            }
+                        })
                             .then(function(response) {
 
                                 $localstorage.set('userId', result.data.id);
@@ -159,6 +173,7 @@
                 delete $localstorage.get('userName');
                 delete $localstorage.get('authToken');
                 delete $localstorage.get('userIdentify');
+                delete $localstorage.get('userPicture');
             },
 
             getToken: function() {
