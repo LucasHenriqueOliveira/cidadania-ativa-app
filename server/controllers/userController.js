@@ -56,13 +56,30 @@ var userController = function(models){
             .then(function (user) {
                 res.status(200);
                 res.json({message: 'User updated!'});
-            })
+            }, function(error) {
+                res.send(error);
+            });
+    }
+
+    // remove the user
+    var remove = function(req, res){
+
+        var id = req.params.user_id;
+
+        models.User.destroy({ where: {id: id}})
+            .then(function (user) {
+                res.status(200);
+                res.json({message: 'User removed!'});
+            }, function(error) {
+                res.send(error);
+            });
     }
 
     return {
         post: post,
         get: get,
-        put: put
+        put: put,
+        remove: remove
     }
 }
 
