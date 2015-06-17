@@ -8,4 +8,7 @@ router.route('/')
     .post(userController.post)
     .get(userController.get);
 
+router.route('/:user_id')
+    .put(userController.put);
+
 module.exports = router;

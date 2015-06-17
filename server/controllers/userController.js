@@ -47,9 +47,22 @@ var userController = function(models){
             });
     }
 
+    // edit the user
+    var put = function(req, res){
+
+        var id = req.params.user_id;
+
+        models.User.update({updatedAt: new Date()}, { where: {id: id}})
+            .then(function (user) {
+                res.status(200);
+                res.json({message: 'User updated!'});
+            })
+    }
+
     return {
         post: post,
-        get: get
+        get: get,
+        put: put
     }
 }
 
