@@ -20,6 +20,9 @@
             },
             getObject: function(key) {
                 return JSON.parse($window.localStorage[key] || '{}');
+            },
+            remove: function(key) {
+                $window.localStorage.removeItem(key);
             }
         }
     }

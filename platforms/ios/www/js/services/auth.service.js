@@ -169,10 +169,11 @@
             },
 
             logout: function(callback) {
-                delete $localstorage.get('userId');
-                delete $localstorage.get('userName');
-                delete $localstorage.get('authToken');
-                delete $localstorage.get('userIdentify');
+                $localstorage.remove('userId');
+                $localstorage.remove('userName');
+                $localstorage.remove('authToken');
+                $localstorage.remove('userIdentify');
+                $localstorage.remove('userPicture');
             },
 
             getToken: function() {
