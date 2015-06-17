@@ -32,8 +32,12 @@ var userController = function(models){
         models.User.findAll()
             .then(function(users) {
                 if (users) {
-                    res.status(200);
-                    res.json(users);
+                    //res.status(200);
+                    //res.json(users);
+                    res.render('index', {
+                        title: 'Express',
+                        users: users
+                    });
                 } else {
                     res.status(400);
                     res.json({ message: 'User not found!' });

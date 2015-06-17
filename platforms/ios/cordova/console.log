@@ -483,3 +483,11 @@ requestLoaded@file:///Users/lucas/Library/Developer/CoreSimulator/Devices/9DF1EA
 2015-06-16 21:34:42.872 CidadaniaAtivaApp[1388:57104] Resetting plugins due to page load.
 2015-06-16 21:34:43.576 CidadaniaAtivaApp[1388:57104] Finished load of: file:///Users/lucas/Library/Developer/CoreSimulator/Devices/9DF1EA58-F610-4F91-BEAB-A98AFEE321B1/data/Containers/Bundle/Application/BC9F003A-BC19-43AC-8383-936641300F61/CidadaniaAtivaApp.app/www/index.html#/login
 2015-06-16 21:34:54.024 CidadaniaAtivaApp[1388:57131] Terminating since there is no system app.
+2015-06-17 17:48:18.180 CidadaniaAtivaApp[736:11965] Apache Cordova native platform version 3.7.0 is starting.
+2015-06-17 17:48:18.182 CidadaniaAtivaApp[736:11965] Multi-tasking -> Device: YES, App: YES
+2015-06-17 17:48:18.201 CidadaniaAtivaApp[736:11965] Unlimited access to network resources
+2015-06-17 17:48:18.522 CidadaniaAtivaApp[736:11965] [CDVTimer][keyboard] 0.057042ms
+2015-06-17 17:48:18.643 CidadaniaAtivaApp[736:11965] [CDVTimer][statusbar] 120.130002ms
+2015-06-17 17:48:18.643 CidadaniaAtivaApp[736:11965] [CDVTimer][TotalPluginStartup] 121.025980ms
+2015-06-17 17:48:18.778 CidadaniaAtivaApp[736:11965] Resetting plugins due to page load.
+2015-06-17 17:48:19.532 CidadaniaAtivaApp[736:11965] Finished load of: file:///Users/lucas/Library/Developer/CoreSimulator/Devices/9DF1EA58-F610-4F91-BEAB-A98AFEE321B1/data/Containers/Bundle/Application/71A96A86-6BAC-4743-BE43-7496B5BF9FEA/CidadaniaAtivaApp.app/www/index.html#/login
