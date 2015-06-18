@@ -75,11 +75,31 @@ var userController = function(models){
             });
     }
 
+    // get the user
+    var getUser = function(req, res){
+
+        var id = req.params.user_id;
+
+        models.User.find({ where: {id: id}})
+            .then(function(user) {
+                if (user) {
+                    res.status(200);
+                    res.json(user);
+                } else {
+                    res.status(400);
+                    res.json({ message: 'User not found!' });
+                }
+            }, function(error) {
+                res.send(error);
+            });
+    }
+
     return {
         post: post,
         get: get,
         put: put,
-        remove: remove
+        remove: remove,
+        getUser: getUser
     }
 }
 
