@@ -39,10 +39,10 @@ var userController = function(models){
                         users: users
                     });
                 } else {
-                    res.status(400);
-                    res.json({ message: 'User not found!' });
+                    res.status(404);
                 }
             }, function(error) {
+                res.status(404);
                 res.send(error);
             });
     }
@@ -55,8 +55,8 @@ var userController = function(models){
         models.User.update({updatedAt: new Date()}, { where: {id: id}})
             .then(function (user) {
                 res.status(200);
-                res.json({message: 'User updated!'});
             }, function(error) {
+                res.status(404);
                 res.send(error);
             });
     }
@@ -69,8 +69,8 @@ var userController = function(models){
         models.User.destroy({ where: {id: id}})
             .then(function (user) {
                 res.status(200);
-                res.json({message: 'User removed!'});
             }, function(error) {
+                res.status(404);
                 res.send(error);
             });
     }
@@ -86,10 +86,11 @@ var userController = function(models){
                     res.status(200);
                     res.json(user);
                 } else {
-                    res.status(400);
+                    res.status(404);
                     res.json({ message: 'User not found!' });
                 }
             }, function(error) {
+                res.status(404);
                 res.send(error);
             });
     }
