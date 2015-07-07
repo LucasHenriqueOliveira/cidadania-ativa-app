@@ -32,10 +32,8 @@ var userController = function(models){
         models.User.findAll()
             .then(function(users) {
                 if (users) {
-                    //res.status(200);
-                    //res.json(users);
                     res.render('index', {
-                        title: 'Express',
+                        title: 'All Users',
                         users: users
                     });
                 } else {
