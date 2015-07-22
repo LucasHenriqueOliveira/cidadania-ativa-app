@@ -8,10 +8,10 @@
   },
 
   "production": {
-    "username": "root",
-    "password": null,
+    "username": "cidadaniaativa",
+    "password": "cidadaniaativa2015",
     "database": "cidadaniaativa",
-    "host": "127.0.0.1",
+    "host": "cidadaniaativa.ccdu8d8cwcau.sa-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   }
 }
