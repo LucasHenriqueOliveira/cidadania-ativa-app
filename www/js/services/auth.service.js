@@ -19,7 +19,7 @@
 
                         $http({
                             method: 'POST',
-                            url: 'http://www.cidadaniaativa.com.br:8000/api/v1/users',
+                            url: 'http://www.cidadaniaativa.com.br/api/v1/users',
                             data: {
                                 name: result.data.name,
                                 email: result.data.email,
@@ -65,7 +65,7 @@
 
                         $http({
                             method: 'POST',
-                            url: 'http://www.cidadaniaativa.com.br:8000/api/v1/users',
+                            url: 'http://www.cidadaniaativa.com.br/api/v1/users',
                             data: {
                                 name: result.data.name,
                                 email: result.data.email,
@@ -128,7 +128,7 @@
 
                         $http({
                             method: 'POST',
-                            url: 'http://www.cidadaniaativa.com.br:8000/api/v1/users',
+                            url: 'http://www.cidadaniaativa.com.br/api/v1/users',
                             data: {
                                 name: result.data.name,
                                 email: null,
