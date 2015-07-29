@@ -6,7 +6,7 @@ var routes = require('./routes/index');
 var userRouter = require('./routes/userRoute');
 
 var app = express();
-var port = process.env.PORT || 8000;
+var port = process.env.PORT || 80;
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

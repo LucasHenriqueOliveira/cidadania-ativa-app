@@ -6,15 +6,15 @@ var userController = function(models){
         var email = req.body.email;
         var nickname = req.body.nickname;
         var picture = req.body.picture;
-        var rede_social = req.body.rede_social;
+        var type = req.body.type;
 
-        models.User.findOrCreate({where:{email: email, nickname: nickname, rede_social: rede_social}, defaults:{name: name, email: email, nickname: nickname, picture: picture, rede_social: rede_social}})
+        models.User.findOrCreate({where:{email: email, nickname: nickname, type: type}, defaults:{name: name, email: email, nickname: nickname, picture: picture, type: type}})
             .spread(function(user, created) {
                 if(created){
                     res.status(201);
                     res.json({ message: 'User created!' });
                 } else {
-                    models.User.update({updatedAt: new Date()}, { where: {email: email, nickname: nickname, rede_social: rede_social}})
+                    models.User.update({updatedAt: new Date()}, { where: {email: email, nickname: nickname, type: type}})
                         .then(function (user) {
                             res.status(200);
                             res.json({message: 'User exist!'});
