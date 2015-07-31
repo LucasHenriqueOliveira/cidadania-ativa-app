@@ -4,6 +4,7 @@ var express = require('express'),
 
 var routes = require('./routes/index');
 var userRouter = require('./routes/userRoute');
+var occurrenceRouter = require('./routes/occurrenceRoute');
 
 var app = express();
 var port = process.env.PORT || 80;
@@ -20,6 +21,7 @@ app.use(bodyParser.json());
 //routes
 app.use('/api/v1', routes);
 app.use('/api/v1/users', userRouter);
+app.use('/api/v1/occurrences', occurrenceRouter);
 
 
 app.listen(port, function(){
