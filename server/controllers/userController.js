@@ -31,11 +31,8 @@ var userController = function(models){
     var get = function(req, res){
         models.User.findAll()
             .then(function(users) {
-                if (users) {
-                    res.json(users);
-                } else {
-                    res.status(404);
-                }
+                res.json(users);
+                res.status(200);
             }, function(error) {
                 res.status(404);
                 res.send(error);
