@@ -1,6 +1,6 @@
 <ion-view view-title="Inserir ocorrência" hide-back-button="true">
     <ion-content class="has-header">
-        <form ng-submit="createDenuncia(task)">
+        <form ng-submit="createOcorrencia()">
             <div class="card">
                 <div class="item item-divider">
                     Local
@@ -14,21 +14,13 @@
                     <div class="input-label">
                         Tipo
                     </div>
-                    <select>
-                        <option>Escada Acessível</option>
-                        <option>Linha-guia</option>
-                        <option>Piso Tátil</option>
-                        <option>Rampa de Acesso</option>
-                        <option>Sinalização Sonora</option>
-                        <option>Sinalização Tátil</option>
-                        <option>Sinalização Visual</option>
-                        <option>Tecnologia Assistiva</option>
-                        <option>Banheiro Acessível</option>
+                   <select ng-model="opcaoSelecionada">
+                     <option ng-repeat="opcao in selOpcoes | orderBy:'+value'" value="{{opcao.id}}">{{opcao.value}}</option>
                     </select>
                 </label>
                 <label class="item item-input item-floating-label">
                     <span class="input-label">Observação</span>
-                    <textarea placeholder="Observação" rows="6"></textarea>
+                    <textarea placeholder="Observação" rows="6" ng-model="descricao"></textarea>
                 </label>
                 <div class="item-input-inset">
                     <div class="item-input-inset thumbnail-denuncia">
