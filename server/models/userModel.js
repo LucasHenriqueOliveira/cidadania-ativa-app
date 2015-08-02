@@ -5,23 +5,29 @@ module.exports = function(sequelize, DataTypes) {
         id: {
             type: DataTypes.INTEGER,
             autoIncrement: true,
-            primaryKey: true
+            primaryKey: true,
+            field: 'id'
         },
         name: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: false,
+            field: 'name'
         },
         email: {
-            type: DataTypes.STRING
+            type: DataTypes.STRING,
+            field: 'email'
         },
         nickname: {
-            type: DataTypes.STRING
+            type: DataTypes.STRING,
+            field: 'nickname'
         },
         picture: {
-            type: DataTypes.STRING
+            type: DataTypes.STRING,
+            field: 'picture'
         },
         type: {
-            type: DataTypes.INTEGER
+            type: DataTypes.INTEGER,
+            field: 'type'
         }
     }, {
         timestamps: true,
