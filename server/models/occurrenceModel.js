@@ -36,7 +36,17 @@ module.exports = function(sequelize, DataTypes) {
         freezeTableName: true,
         tableName: "occurrence",
         createdAt: 'createdAt',
-        updatedAt: 'updatedAt'
+        updatedAt: 'updatedAt',
+        classMethods: {
+            associate: function(models) {
+                Occurrence.belongsTo(models.User, {
+                    onDelete: "CASCADE",
+                    foreignKey: {
+                        allowNull: false
+                    }
+                });
+            }
+        }
     });
 
     return Occurrence;

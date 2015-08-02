@@ -29,7 +29,12 @@ module.exports = function(sequelize, DataTypes) {
         tableName: "user",
         createdAt: 'createdAt',
         updatedAt: 'updatedAt',
-        deletedAt: 'deletedAt'
+        deletedAt: 'deletedAt',
+        classMethods: {
+            associate: function(models) {
+                User.hasMany(models.Occurrence)
+            }
+        }
     });
 
     return User;
