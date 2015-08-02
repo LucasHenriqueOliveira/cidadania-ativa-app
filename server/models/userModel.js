@@ -35,12 +35,7 @@ module.exports = function(sequelize, DataTypes) {
         tableName: "user",
         createdAt: 'createdAt',
         updatedAt: 'updatedAt',
-        deletedAt: 'deletedAt',
-        classMethods: {
-            associate: function(models) {
-                User.hasMany(models.Occurrence, {foreignKey: 'user_id'})
-            }
-        }
+        deletedAt: 'deletedAt'
     });
 
     return User;

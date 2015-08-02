@@ -8,6 +8,11 @@ module.exports = function(sequelize, DataTypes) {
             primaryKey: true,
             field: 'id'
         },
+        user_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            field: 'user_id'
+        },
         latitude: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -39,12 +44,7 @@ module.exports = function(sequelize, DataTypes) {
         freezeTableName: true,
         tableName: "occurrence",
         createdAt: 'createdAt',
-        updatedAt: 'updatedAt',
-        classMethods: {
-            associate: function(models) {
-                Occurrence.belongsTo(models.User, {foreignKey: 'user_id'});
-            }
-        }
+        updatedAt: 'updatedAt'
     });
 
     return Occurrence;
