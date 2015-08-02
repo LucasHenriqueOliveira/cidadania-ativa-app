@@ -38,6 +38,22 @@ module.exports = function(sequelize, DataTypes) {
         occurrence_type_id: {
             type: DataTypes.INTEGER,
             field: 'occurrence_type_id'
+        },
+        street: {
+            type: DataTypes.STRING,
+            field: 'street'
+        },
+        neighborhood: {
+            type: DataTypes.STRING,
+            field: 'neighborhood'
+        },
+        city: {
+            type: DataTypes.STRING,
+            field: 'city'
+        },
+        country: {
+            type: DataTypes.STRING,
+            field: 'country'
         }
     }, {
         timestamps: true,
