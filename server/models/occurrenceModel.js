@@ -8,11 +8,6 @@ module.exports = function(sequelize, DataTypes) {
             primaryKey: true,
             field: 'id'
         },
-        user_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            field: 'user_id'
-        },
         latitude: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -47,9 +42,7 @@ module.exports = function(sequelize, DataTypes) {
         updatedAt: 'updatedAt',
         classMethods: {
             associate: function(models) {
-                Occurrence.belongsTo(models.User, {
-                    foreignKey: 'user_id'
-                });
+                Occurrence.belongsTo(models.User, {foreignKey: 'user_id'});
             }
         }
     });

@@ -38,7 +38,7 @@ module.exports = function(sequelize, DataTypes) {
         deletedAt: 'deletedAt',
         classMethods: {
             associate: function(models) {
-                User.hasMany(models.Occurrence)
+                User.hasMany(models.Occurrence, {foreignKey: 'user_id'})
             }
         }
     });
