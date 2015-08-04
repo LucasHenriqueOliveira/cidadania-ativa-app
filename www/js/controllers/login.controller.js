@@ -11,10 +11,10 @@
 
         $scope.user = {};
 
-        if(AuthService.isLogged()) {
-            event.preventDefault();
+       // if(AuthService.isLogged()) {
+          //  event.preventDefault();
             $location.path('/app/main');
-        }
+        //}
 
         $scope.loginFacebook = function() {
             AuthService.loginFacebook();

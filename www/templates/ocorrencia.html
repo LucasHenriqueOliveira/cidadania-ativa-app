@@ -1,6 +1,6 @@
 <ion-view view-title="Inserir ocorrência" hide-back-button="true">
     <ion-content class="has-header">
-        <form ng-submit="createOcorrencia()">
+        <form ng-submit="gravarOcorrencia()">
             <div class="card">
                 <div class="item item-divider">
                     Local
@@ -14,13 +14,14 @@
                     <div class="input-label">
                         Tipo
                     </div>
-                   <select ng-model="opcaoSelecionada">
+                   <select ng-model="selOpcoes.id">
                      <option ng-repeat="opcao in selOpcoes | orderBy:'+value'" value="{{opcao.id}}">{{opcao.value}}</option>
                     </select>
                 </label>
+
                 <label class="item item-input item-floating-label">
                     <span class="input-label">Observação</span>
-                    <textarea placeholder="Observação" rows="6" ng-model="descricao"></textarea>
+                    <textarea placeholder="Observação" rows="6" ng-Model="$parent.descricao"></textarea>
                 </label>
                 <div class="item-input-inset">
                     <div class="item-input-inset thumbnail-denuncia">
