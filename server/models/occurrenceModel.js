@@ -51,9 +51,13 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.STRING,
             field: 'city'
         },
-        country: {
+        state: {
             type: DataTypes.STRING,
-            field: 'country'
+            field: 'state'
+        },
+        postal_code_prefix: {
+            type: DataTypes.INTEGER,
+            field: 'postal_code_prefix'
         }
     }, {
         timestamps: true,
