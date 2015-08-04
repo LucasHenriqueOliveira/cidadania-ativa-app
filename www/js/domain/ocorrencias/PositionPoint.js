@@ -39,7 +39,7 @@ PositionPoint.prototype.valueOf = function () {
 Object.defineProperties(PositionPoint.prototype, {
     validate: {
         value: function (point) {
-            if (!is_float(point)) {
+            if (!validator.isFloat(point)) {
                 throw Error('valor '+point+' nao e um ponto flutuante.');
             }
         }
