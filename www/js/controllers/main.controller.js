@@ -68,6 +68,20 @@
                         geocoder.geocode({'latLng': latlng}, function(result, status) {
                             if (status == google.maps.GeocoderStatus.OK) {
                                 if(result[0]){
+                                    
+                                    var arr = result[0].address_components;
+                                    arr.latitude = latitude;
+                                    arr.longitude = longitude;
+                                    
+                                    var ocorrencia = OccurrenceFactory.create({
+                                        description:'Descrição de Teste',
+                                        arrGoogle: arr, 
+                                        status:'pendente',
+                                        occurrenceTypeId: 6,
+                                        occurrenceTypeName: 'ocorrencia teste'
+                                    });
+                                    console.log(ocorrencia);
+                                    
                                     $scope.address = result[0].formatted_address;
                                 }
                             }
