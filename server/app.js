@@ -1,6 +1,7 @@
 var express = require('express'),
     path = require('path'),
-    bodyParser = require('body-parser');
+    bodyParser = require('body-parser'),
+    cors = require('cors');
 
 var routes = require('./routes/index');
 var userRouter = require('./routes/userRoute');
@@ -17,8 +18,10 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 //app.use(express.static(path.join(__dirname, 'public')));
 
+// cors
+app.use(cors());
 
-//routes
+// routes
 app.use('/api/v1', routes);
 app.use('/api/v1/users', userRouter);
 app.use('/api/v1/occurrences', occurrenceRouter);
