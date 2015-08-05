@@ -50,7 +50,7 @@ var occurrenceController = function(models){
     var get = function(req, res){
         models.Occurrence.findAll()
             .then(function(occurrences) {
-                res.json(users);
+                res.json(occurrences);
                 res.status(200);
             }, function(error) {
                 res.status(404);
