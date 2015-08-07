@@ -5,11 +5,11 @@
             .module('CidadaniaAtivaApp')
             .controller('OcorrenciaCtrl', OcorrenciaCtrl);  
 
-    OcorrenciaCtrl.$inject = ['$scope', '$state', '$localstorage','$http'];
+    OcorrenciaCtrl.$inject = ['$scope', '$state', '$localstorage', '$http', '$cordovaCamera'];
 
-    function OcorrenciaCtrl($scope, $state, $localstorage,$http) {
-
-        $http.defaults.useXDomain = true;
+ 
+    function OcorrenciaCtrl($scope, $state, $localstorage, $http, $cordovaCamera) {
+ 
         $scope.selOpcoes = [
             {"id": "1", "value": "Escada Acessível"},
             {"id": "2", "value": "Linha-guia"},
@@ -23,8 +23,25 @@
         $scope.descricao = null;
         $scope.address = $localstorage.get('address');
 
+        $scope.addImage = function() {
+            var options = {
+                quality : 75,
+                destinationType : Camera.DestinationType.DATA_URL,
+                sourceType : Camera.PictureSourceType.CAMERA,
+                allowEdit : true,
+                encodingType: Camera.EncodingType.JPEG,
+                targetWidth: 300,
+                targetHeight: 300,
+                popoverOptions: CameraPopoverOptions,
+                saveToPhotoAlbum: false
+            };
 
-
+            $cordovaCamera.getPicture(options).then(function(imageData) {
+                $scope.imgURI = "data:image/jpeg;base64," + imageData;
+            }, function(err) {
+                // An error occured. Show a message to the user
+            });
+        }
 
         $scope.gravarOcorrencia = function () {
 
