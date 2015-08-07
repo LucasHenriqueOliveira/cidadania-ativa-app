@@ -3,11 +3,13 @@
 
     angular
             .module('CidadaniaAtivaApp')
-            .controller('OcorrenciaCtrl', OcorrenciaCtrl);
+            .controller('OcorrenciaCtrl', OcorrenciaCtrl);  
 
     OcorrenciaCtrl.$inject = ['$scope', '$state', '$localstorage','$http'];
 
     function OcorrenciaCtrl($scope, $state, $localstorage,$http) {
+
+        $http.defaults.useXDomain = true;
         $scope.selOpcoes = [
             {"id": "1", "value": "Escada Acessível"},
             {"id": "2", "value": "Linha-guia"},
@@ -34,23 +36,29 @@
                 "status_id": 1,
                 "occurrence_type_id": $scope.selOpcoes.id,
                 "description": $scope.descricao,
-                "picture": "dddd"
+                "picture": "dddd",
+                "street": "ffffff",
+                "neighborhood": "gsgsgsgsgs",
+                "state": "SP",
+                "city" : "Brasilia",
+                "postal_code_prefix" : 33200    
+
             }
 
             $http({
                 method: 'POST',
-                url: "http://www.cidadaniaativa.com.br/api/v1/occurrences/ ",
+                url: "http://www.cidadaniaativa.com.br/api/v1/occurrences/",
                 data: ocorrencia,
-                headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+                headers: {'Access-Control-Allow-Origin': '*'}
             }).
                     success(function (data, status, headers, config) {
 
-                        console.log(data);
+                        console.log('gravado' + data);
 
 
                     }).
                     error(function (data, status, headers, config) {
-                        console.log(data);
+                        console.log('Erro' + data + status);
                     });
 
         };
