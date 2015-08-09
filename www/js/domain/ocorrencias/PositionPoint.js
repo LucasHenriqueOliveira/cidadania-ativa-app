@@ -1,47 +1,53 @@
-/* global: is_float*/
-
-"use strict";
-
 /**
  * Um ponto de Posiçao (latitude/longitude)
  * @param {float} value
  * @returns {PositionPoint}
  */
-var PositionPoint = function (value) {
-    this.validate(value);
+define([], function () {
 
-    Object.defineProperty(this, 'point', {
-        value: value
-    });
+    "use strict";
+   
+    var PositionPoint = function (value) {
+        this.validate(value);
 
-    if (PositionPoint.instances[this]) {
-        return PositionPoint.instances[this];
-    }
-    else {
-        PositionPoint.instances[this] = this;
-    }
-};
+        Object.defineProperty(this, 'point', {
+            value: value
+        });
 
-// VARIÁRVEL ESTÁTICA
-// guarda uma referencia às instâncias criadas desta classe.}
-PositionPoint.instances = [];
+        if (PositionPoint.instances[this]) {
+            return PositionPoint.instances[this];
+        }
+        else {
+            PositionPoint.instances[this] = this;
+        }
+    };
 
-PositionPoint.prototype.toString = function () {
-    return this.point;
-};
+    // VARIÁRVEL ESTÁTICA
+    // guarda uma referencia às instâncias criadas desta classe.}
+    PositionPoint.instances = [];
 
-// valueOf garante a comparação de grandeza. 
-// Se maior ou menor
-PositionPoint.prototype.valueOf = function () {
-    return Number(this.point);
-};
+    PositionPoint.prototype.toString = function () {
+        return this.point;
+    };
 
-Object.defineProperties(PositionPoint.prototype, {
-    validate: {
-        value: function (point) {
-            if (!validator.isFloat(point)) {
-                throw Error('valor '+point+' nao e um ponto flutuante.');
+    // valueOf garante a comparação de grandeza. 
+    // Se maior ou menor
+    PositionPoint.prototype.valueOf = function () {
+        return Number(this.point);
+    };
+
+    Object.defineProperties(PositionPoint.prototype, {
+        validate: {
+            value: function (point) {
+//                if (!validator.isFloat(point)) {
+//                    throw Error('valor '+point+' nao e um ponto flutuante.');
+//                }
+                return true;
             }
         }
-    }
+    });
+
+    return PositionPoint;
+
 });
+

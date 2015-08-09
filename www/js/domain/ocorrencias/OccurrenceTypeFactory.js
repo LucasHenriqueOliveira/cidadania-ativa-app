@@ -1,18 +1,26 @@
-"use strict";
-
 /**
  * Factory de objetos OccurrenceType
  * @returns {undefined}
  */
-var OccurrenceTypeFactory = function () {
-};
+define(function () {
 
-/**
- * Cria um objeto OccurrenceType
- * @param {int} id
- * @param {string} name
- * @returns {OccurrenceType}
- */
-OccurrenceTypeFactory.create = function(){
-    return new OccurrenceType(arguments[0], arguments[1]);
-}
+    "use strict";
+    
+    var OccurrenceType = require('ocorrencias/OccurrenceType');
+
+    var OccurrenceTypeFactory = function () {
+    };
+
+    /**
+     * Cria um objeto OccurrenceType
+     * @param {int} id
+     * @param {string} name
+     * @returns {OccurrenceType}
+     */
+    OccurrenceTypeFactory.create = function () {
+        return new OccurrenceType(arguments[0], arguments[1]);
+    }
+
+    return OccurrenceTypeFactory;
+
+});

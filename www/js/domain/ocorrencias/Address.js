@@ -1,5 +1,3 @@
-"use strict";
-
 /**
  * Endereco da Ocorrencia
  * Recebe um objeto com as Propriedades:
@@ -11,22 +9,38 @@
  * @param {object} objAddress
  * @returns {Address}
  */
-var Address = function (objAddress) {
+define('ocorrencias/Address', function () {
+
+    "use strict";
+
+    var Address = function (objAddress) {
+
+        Object.defineProperties(this, {
+            street: {
+                value: objAddress.street
+            },
+            number: {
+                value: objAddress.number
+            },
+            neighborhood: {
+                value: objAddress.neighborhood
+            },
+            city: {
+                value: objAddress.city
+            },
+            state: {
+                value: objAddress.state
+            },
+            postalCodePrefix: {
+                value: objAddress.postalCodePrefix
+            }
+        });
+    };
+
+    Address.prototype.toString = function () {
+        return this.street + ', ' + this.number + ' ' + this.neighborhood + ' ' + this.city + ' ' + this.state + ' ' + ' ' + this.postalCodePrefix;
+    };
     
-    Object.defineProperty(this, 'street', {
-        value: objAddress.routeLongName
-    });
-    Object.defineProperty(this, 'neighborhood', {
-        value: objAddress.neighborhood
-    });
-    Object.defineProperty(this, 'city', {
-        value: objAddress.locality
-    });
-    Object.defineProperty(this, 'state', {
-        value: objAddress.state
-    });
-    Object.defineProperty(this, 'postalCodePrefix', {
-        value: objAddress.postalCodePrefix
-    });
-    
-};
+    return Address;
+
+});

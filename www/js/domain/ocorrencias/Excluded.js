@@ -1,19 +1,25 @@
-"use strict";
-
 /**
- * Status do tipo Cancelado.
- * Ocorrencia cancelada pelo proprio usuario que abriu
- * @returns {Cancelled}
+ * Status do tipo Excluido.
+ * Ocorrencia excluida por avaliacao de relatos de ocorrencia falsa/indevida 
+ * @returns {Excluded}
  */
-var Cancelled = function () {
 
-    Status.apply(this, arguments);
+define('ocorrencias/Excluded', ['ocorrencias/Status'], function (Status) {
 
-    Object.defineProperty(this, 'name', {
-        value: 'Cancelado'
-    });
+    "use strict";
+    var Excluded = function () {
 
-};
+        Status.apply(this, arguments);
 
-Cancelled.prototype = Object.create(Status.prototype);
-Cancelled.prototype.constructor = Cancelled;
+        Object.defineProperty(this, 'name', {
+            value: 'Excluido'
+        });
+
+    };
+
+    Excluded.prototype = Object.create(Status.prototype);
+    Excluded.prototype.constructor = Excluded;
+    
+    return Excluded;
+
+});

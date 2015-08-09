@@ -1,5 +1,3 @@
-"use strict";
-
 /**
  * Status do tipo Reaberto. 
  * Ocorrencia que foi reaberta pelo usuario.
@@ -7,25 +5,34 @@
  * @param {Status} status
  * @returns {Reopenned}
  */
-var Reopenned = function (status) {
+define('ocorrencias/Pendent', ['ocorrencias/Status'], function (Status) {
 
-    if (!(status instanceof Status)) {
-        throw new Error("Status informado nao e uma instancia correta");
-    }
+    "use strict";
 
-    Status.apply(this, arguments);
+    var Reopenned = function (status) {
 
-    Object.defineProperty(this, 'status', {
-        value: status
-    });
-
-    Object.defineProperty(this, 'name', {
-        get: function(){
-            return this.status + ' Reaberto';
+        if (!(status instanceof Status)) {
+            throw new Error("Status informado nao e uma instancia correta");
         }
-    });
 
-};
+        Status.apply(this, arguments);
 
-Reopenned.prototype = Object.create(Status.prototype);
-Reopenned.prototype.constructor = Reopenned;
+        Object.defineProperties(this, {
+            status: {
+                value: status
+            },
+            name: {
+                get: function () {
+                    return this.status + ' Reaberto';
+                }
+            }
+        });
+
+    };
+
+    Reopenned.prototype = Object.create(Status.prototype);
+    Reopenned.prototype.constructor = Reopenned;
+
+    return Reopenned;
+
+});

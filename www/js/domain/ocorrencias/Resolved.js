@@ -1,19 +1,25 @@
-"use strict";
-
 /**
  * Status do tipo Resolvido.
  * Ocorrencia que foi solucionada. 
  * @returns {Resolved}
  */
-var Resolved = function () {
+define('ocorrencias/Pendent', ['ocorrencias/Status'], function (Status) {
 
-    Status.apply(this, arguments);
+    "use strict";
 
-    Object.defineProperty(this, 'name', {
-        value: 'Resolvido'
-    });
+    var Resolved = function () {
 
-};
+        Status.apply(this, arguments);
 
-Resolved.prototype = Object.create(Status.prototype);
-Resolved.prototype.constructor = Resolved;
+        Object.defineProperty(this, 'name', {
+            value: 'Resolvido'
+        });
+
+    };
+
+    Resolved.prototype = Object.create(Status.prototype);
+    Resolved.prototype.constructor = Resolved;
+
+    return Resolved;
+
+});

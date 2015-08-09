@@ -1,5 +1,3 @@
-"use strict";
-
 /**
  * Uma Ocorrencia de um problema social.
  * @param {string} description
@@ -9,30 +7,51 @@
  * @param {OccurrenceType} occurrenceType
  * @returns {Occurrence}
  */
-var Occurrence = function (description, location, picture, status, occurrenceType) {
+define(function () {
+
+    "use strict";
     
-    if(!(location instanceof Location)){
-        throw new Error("Local informado nao e uma instancia correta");
-    }
-    
-    if(!(status instanceof Status)){
-        throw new Error("Status informado nao e uma instancia correta");
-    }
-    
-    Object.defineProperty(this, 'description', {
-        value: description
+    var Occurrence = function (description, location, picture, status, occurrenceType) {
+
+        if (!(location instanceof Location)) {
+            throw new Error("Local informado nao e uma instancia correta");
+        }
+
+        if (!(status instanceof Status)) {
+            throw new Error("Status informado nao e uma instancia correta");
+        }
+
+        Object.defineProperties(this, {
+            description: {
+                value: description,
+                enumerable: true
+            },
+            location: {
+                value: location,
+                enumerable: true
+            },
+            picture: {
+                value: picture
+            },
+            status: {
+                value: status
+            },
+            occurrenceType: {
+                value: occurrenceType
+            }
+        });
+
+    };
+
+    Object.defineProperties(Occurrence.prototype, {
+        latitude: {
+            get: function () {
+                return this.location.latitude.valueOf();
+            },
+            enumerable: true
+        }
     });
-    Object.defineProperty(this, 'location', {
-        value: location
-    });
-    Object.defineProperty(this, 'picture', {
-        value: picture
-    });
-    Object.defineProperty(this, 'status', {
-        value: status
-    });
-    Object.defineProperty(this, 'occurrenceType', {
-        value: occurrenceType
-    });
-    
-};
+
+    return Occurrence;
+
+});

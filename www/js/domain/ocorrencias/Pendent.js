@@ -1,19 +1,30 @@
-"use strict";
-
 /**
- * Status do tipo Pendente.
- * Ocorrencia aberta e ainda sem resultado
- * @returns {Pendent}
- */
-var Pendent = function () {
+* Status do tipo Pendente.
+* Ocorrencia aberta e ainda sem resultado
+* @returns {Pendent}
+*/
+define(['ocorrencias/Status'], function(Status){
     
-   Status.apply(this, arguments);
-   
-   Object.defineProperty(this, 'name', {
-        value: 'Pendente'
-    });
-    
-};
+    "use strict";
 
-Pendent.prototype = Object.create(Status.prototype);
-Pendent.prototype.constructor = Pendent;
+    var Pendent = function () {
+
+        Status.apply(this, arguments);
+
+        Object.defineProperties(this, {
+            id: {
+                value: 1
+            },
+            name: {
+                value: 'Pendente'
+            }
+        });
+
+    };
+
+    Pendent.prototype = Object.create(Status.prototype);
+    Pendent.prototype.constructor = Pendent;
+
+    return Pendent;
+
+});
