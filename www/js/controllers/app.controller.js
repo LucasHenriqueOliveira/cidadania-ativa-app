@@ -14,11 +14,11 @@
         $scope.userIdentify = AuthService.getUserIdentify();
         var picture = AuthService.getUserPicture();
 
-       // if(AuthService.isLogged()) {
+        if(AuthService.isLogged()) {
             $location.path('/app/main');
-        //} else {
-          //  $location.path('/login');
-        //}
+        } else {
+            $location.path('/login');
+        }
 
         if (picture !== undefined) {
             $scope.userPicture = picture;
