@@ -56,6 +56,29 @@ map {
     color: #ffffff;
 }
 
+#buttonLoginCadastrar{
+    width: 96%;
+    font-weight: bold;
+    background-color: #009966;
+    color: #ffffff;
+}
+
+.paddingCadastro{
+    padding-top: 80px;
+}
+
+.tamanhoImagem img{
+    max-width:105px;
+    max-height:104px;
+    width: auto;
+    height: auto;
+}
+.centralizaFiguraDiv{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%); /* Adicionar os prefixos dos navegadores */
+}
+
 #button-location{
     border: 0;
     background-color: #fff;
@@ -63,6 +86,8 @@ map {
     margin-right: 0;
     padding-right: 0;
 }
+
+ 
 
 .login{
     background: url(../img/fundo.jpg) no-repeat center center fixed;

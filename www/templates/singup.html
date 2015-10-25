@@ -1,0 +1,53 @@
+<div class="bar bar-header bar-positive">
+    <button class="button button-clear" ng-click="voltar()">Voltar</button>
+    <h1 class="title">Cadastro de Usuário</h1>
+      <button class="button button-clear" ng-click="salvar()">Salvar</button>
+</div>
+
+
+
+<div class="list paddingCadastro">
+    <div class="row">
+        <div class="col col-10"> 
+            <div class="item-input-inset centralizaFiguraDiv tamanhoImagem  ">
+                <a href="#" ng-click="addImage()">
+                    <img ng-show ="imgURI !== undefined" ng-src="{{imgURI}}">
+                </a>
+                <a href="#" ng-click="addImage()">
+                    <img ng-show ="imgURI === undefined" ng-src="../img/logo.png"/>
+                </a>
+
+
+            </div>
+        </div>
+        <div class="col col-80 "> <span>Clique na figura para adicionar seu avatar </span></div> 
+    </div>
+    <div class="row">
+        <div class="col"> 
+            <label class="item item-input item-stacked-label">
+                <i class="icon ion-person placeholder-icon"></i>
+                <span class="input-label">Usuário</span>
+                <input type="text" ng-Model="username">
+            </label>
+
+            <label class="item item-input item-stacked-label">
+                <i class="icon ion-ios-email placeholder-icon"></i>
+                <span class="input-label">E-mail</span>
+                <input type="email" ng-Model="email">
+            </label>
+            <label class="item item-input item-stacked-label">
+                <i class="icon ion-ios-locked placeholder-icon"></i>
+                <span class="input-label">Senha</span>
+                <input type="password" ng-Model="password">
+            </label>
+            <label class="item item-input item-stacked-label">
+                <i class="icon ion-ios-locked placeholder-icon"></i>
+                <span class="input-label">Confirmação de Senha</span>
+                <input type="password" ng-Model="repassword">
+            </label>
+        </div>
+    </div>
+   
+</div>
+
+

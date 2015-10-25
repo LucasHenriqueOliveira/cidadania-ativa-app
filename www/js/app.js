@@ -67,6 +67,12 @@
             templateUrl: "templates/login.html",
             controller: 'LoginCtrl'
         })
+        
+         .state('singup', {
+            url: "/singup",
+            templateUrl: "templates/singup.html",
+            controller: 'SingupCtrl'
+        })
 
         .state('app', {
             url: "/app",

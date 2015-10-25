@@ -13,7 +13,7 @@
 
        // if(AuthService.isLogged()) {
           //  event.preventDefault();
-            $location.path('/app/main');
+        $location.path('/app/main');
         //}
 
         $scope.loginFacebook = function() {
@@ -29,5 +29,7 @@
         $scope.loginTwitter = function() {
             AuthService.loginTwitter();
         };
+        
+       
     };
 })();
